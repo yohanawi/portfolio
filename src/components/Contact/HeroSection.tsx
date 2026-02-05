@@ -4,7 +4,7 @@ const HeroSection = () => {
     return (
         <section className="relative px-6 pt-32 pb-16">
             <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium border rounded-full text-brand-crimson-red border-brand-crimson-red/30 bg-brand-crimson-red/10 animate-fade-in-down">
+                <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-white border rounded-full border-brand-crimson-red/30 bg-brand-crimson-red/10 animate-fade-in-down">
                     <Mail size={16} />
                     Get In Touch
                 </div>

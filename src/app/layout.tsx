@@ -4,6 +4,7 @@ import Header from "@/components/Common/Header";
 import Footer from "@/components/Common/Footer";
 import ScrollTop from "@/components/Common/ScrollTop";
 import "./globals.css";
+import { WhatsAppButton } from "@/components/Common/WhatsAppButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.yourname.com"), // 🔴 replace with your domain
+  metadataBase: new URL("https://yohanawishka.com"),
 
   title: {
     default: "Yohan | Full Stack Web Developer",
@@ -105,6 +106,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${poppins.variable}`}>
         <Header />
         <main>{children}</main>
+        <WhatsAppButton />
         <ScrollTop />
         <Footer />
       </body>

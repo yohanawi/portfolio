@@ -1,12 +1,17 @@
 import { Metadata } from "next";
+
 import HeroSection from "@/components/Contact/HeroSection";
 import MainSection from "@/components/Contact/MainSection";
 
-// SEO Metadata (Place this in a separate metadata export for App Router)
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "Contact Yohan Awishka | Hire Full Stack Developer",
-        description: "Get in touch with Yohan Awishka for web development projects, freelance work, or collaboration opportunities. Available for Next.js, React, and Laravel projects.",
+
+        title: {
+            default: "Contact Yohan Awishka | Hire Full Stack Developer",
+            template: "%s | Contact Yohan Awishka"
+        },
+
+        description: "Get in touch with Yohan Awishka for web development projects, freelance work, or collaboration opportunities.",
         keywords: [
             "Contact Yohan Awishka",
             "Hire Full Stack Developer",
@@ -37,6 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
+            site: "@yourusername",
             title: "Contact Yohan Awishka | Full Stack Developer",
             description: "Get in touch for web development projects and collaboration.",
             images: ["/images/twitter-contact.jpg"],
@@ -69,33 +75,38 @@ export default async function ContactPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "ContactPage",
+                        "@id": "https://yohanawishka.com/contact",
                         name: "Contact Yohan Awishka",
-                        description: "Get in touch with Yohan Awishka for web development projects",
+                        description: "Contact page of Yohan Awishka, Full Stack Developer",
                         url: "https://yohanawishka.com/contact",
                         mainEntity: {
                             "@type": "Person",
+                            "@id": "https://yohanawishka.com/#person",
                             name: "Yohan Awishka",
                             jobTitle: "Full Stack Developer",
-                            email: "yohan.indrawansha2000@gmail.com",
-                            telephone: "077-8638568",
+                            url: "https://yohanawishka.com",
+                            email: "mailto:yohan.indrawansha2000@gmail.com",
+                            telephone: "+94-77-863-8568",
+                            sameAs: [
+                                "https://github.com/yourusername",
+                                "https://linkedin.com/in/yourusername",
+                                "https://twitter.com/yourusername"
+                            ],
                             address: {
                                 "@type": "PostalAddress",
                                 addressLocality: "Colombo",
-                                addressCountry: "LK",
-                            },
-                        },
+                                addressCountry: "LK"
+                            }
+                        }
                     }),
                 }}
             />
 
             <main className="relative min-h-screen overflow-hidden font-inter bg-brand-gray">
-                {/* Decorative background elements */}
                 <div className="fixed top-0 left-0 rounded-full w-96 h-96 bg-brand-crimson-red/5 blur-3xl"></div>
                 <div className="fixed bottom-0 right-0 rounded-full w-96 h-96 bg-brand-soft-red/5 blur-3xl"></div>
-
                 <HeroSection />
                 <MainSection />
-
             </main>
         </>
     );
