@@ -14,7 +14,7 @@ module.exports = {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
         inter: ["var(--font-inter)"],
-      },
+      }, 
       colors: {
         'brand-dark': '#0B0B0B',           // Primary background
         'brand-gray': '#121212',           // Secondary background
