@@ -1,32 +1,52 @@
 "use client";
 
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 import { projects } from "@/data/ProjectData";
+import AnimatedStatCard from "../Common/AnimatedStatCard";
 
 const StatsSection = () => {
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+    const isInView = useInView(sectionRef, {
+        once: true,
+        amount: 0.4,
+    });
+
+    const totalProjects = projects.length;
+    const totalTech = new Set(projects.flatMap(p => p.techStack)).size;
+
+    const stats = [
+        {
+            value: totalProjects,
+            label: "Total Projects",
+        },
+        {
+            value: totalTech,
+            label: "Technologies",
+        },
+        {
+            value: 97,
+            suffix: "%",
+            label: "Success Rate",
+        },
+    ];
+
     return (
-        <section className="relative px-6 py-8">
+        <section ref={sectionRef} className="relative px-6 py-8">
             <div className="grid max-w-4xl grid-cols-3 gap-4 mx-auto">
-                <div className="p-4 text-center border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20">
-                    <div className="mb-1 text-2xl font-bold md:text-3xl text-brand-crimson-red font-poppins">
-                        {projects.length}
-                    </div>
-                    <div className="text-xs text-brand-muted-gray">Total Projects</div>
-                </div>
-                <div className="p-4 text-center border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20">
-                    <div className="mb-1 text-2xl font-bold md:text-3xl text-brand-crimson-red font-poppins">
-                        {new Set(projects.flatMap(p => p.techStack)).size}
-                    </div>
-                    <div className="text-xs text-brand-muted-gray">Technologies</div>
-                </div>
-                <div className="p-4 text-center border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20">
-                    <div className="mb-1 text-2xl font-bold md:text-3xl text-brand-crimson-red font-poppins">
-                        100%
-                    </div>
-                    <div className="text-xs text-brand-muted-gray">Success Rate</div>
-                </div>
+                {stats.map((stat, index) => (
+                    <AnimatedStatCard
+                        key={index}
+                        value={stat.value}
+                        suffix={stat.suffix}
+                        label={stat.label}
+                        delay={index * 0.15}
+                        start={isInView}
+                    />
+                ))}
             </div>
         </section>
     );
-}
+};
 
 export default StatsSection;

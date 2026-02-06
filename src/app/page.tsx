@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     "Backend Developer",
   ],
   alternates: {
-    canonical: "https://www.yourname.com",
+    canonical: "https://www.yohanawishka.com",
   },
   openGraph: {
     title: "Yohan | Full Stack Web Developer",
     description:
       "Personal portfolio of Yohan, showcasing projects, skills, experience, and education in modern web development.",
-    url: "https://www.yourname.com",
+    url: "https://www.yohanawishka.com",
     siteName: "Yohan Portfolio",
     images: [
       {
@@ -41,6 +41,16 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Yohan Portfolio",
       },
+    ],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };

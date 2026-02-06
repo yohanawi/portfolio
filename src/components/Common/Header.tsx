@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                 {/* Logo */}
                 <Link href="/" className="flex items-center">
                     <Image
-                        src="/assets/logo/YA.png"
+                        src="/assets/logo/logo.png"
                         alt="Logo"
                         width={40}
                         height={40}

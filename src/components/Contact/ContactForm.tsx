@@ -162,7 +162,7 @@ export default function ContactForm() {
                 aria-busy={loading}
                 aria-disabled={loading || submitted}
                 disabled={submitted || loading}
-                className="relative w-full py-4 overflow-hidden font-bold transition-all duration-300 rounded-lg text-brand-white bg-brand-crimson-red hover:bg-brand-soft-red hover:shadow-lg hover:shadow-brand-crimson-red/30 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 group"
+                className="relative w-full py-2 overflow-hidden font-bold transition-all duration-300 rounded-lg text-brand-white bg-brand-crimson-red hover:bg-brand-soft-red hover:shadow-lg hover:shadow-brand-crimson-red/30 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 group"
             >
                 {submitted ? (
                     <span className="flex items-center justify-center gap-2" aria-live="polite">

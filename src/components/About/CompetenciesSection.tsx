@@ -28,10 +28,10 @@ const CompetenciesSection = () => {
     ];
 
     return (
-        <section className="relative px-6 py-20">
-            <div className="max-w-6xl mx-auto">
+        <section className="relative px-6 py-16">
+            <div className="mx-auto max-w-7xl">
                 <div className="mb-16 text-center">
-                    <h3 className="mb-4 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
+                    <h3 className="mb-2 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
                         What I Do <span className="text-brand-crimson-red">Best</span>
                     </h3>
                     <div className="flex items-center justify-center gap-3">
@@ -43,20 +43,18 @@ const CompetenciesSection = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {expertise.map((item, index) => (
-                        <div
-                            key={index}
+                        <div key={index}
                             className="relative p-8 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2 animate-fade-in-up"
-                            style={{ animationDelay: `${index * 100}ms` }}
-                        >
+                            style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="flex items-center justify-center w-16 h-16 mb-6 transition-colors rounded-xl bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red group-hover:text-brand-white">
                                 {item.icon}
                             </div>
-                            <h4 className="mb-3 text-xl font-bold transition-colors text-brand-white font-poppins group-hover:text-brand-crimson-red">
+                            <h4 className="mb-3 text-xl font-bold transition-colors font-poppins text-brand-white group-hover:text-brand-crimson-red">
                                 {item.title}
                             </h4>
-                            <p className="text-brand-light-gray">
+                            <p className="text-brand-light-gray font-inter">
                                 {item.description}
                             </p>
                             <div className="absolute bottom-0 right-0 w-16 h-16 transition-opacity duration-300 border-b-2 border-r-2 opacity-0 rounded-br-2xl border-brand-crimson-red group-hover:opacity-100"></div>

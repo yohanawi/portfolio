@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://yohanawishka.com"),
 
   title: {
-    default: "Yohan | Full Stack Web Developer",
-    template: "%s | Yohan",
+    default: "Yohan Awishka | Full Stack Web Developer",
+    template: "%s | Yohan Awishka Portfolio",
   },
 
   description:
-    "Yohan is a Full Stack Web Developer specializing in Next.js, Laravel, Tailwind CSS, and scalable web applications. View projects, skills, and contact details.",
+    "Yohan Awishka is a Full Stack Web Developer specializing in Next.js, Laravel, Tailwind CSS, and scalable web applications. View projects, skills, and contact details.",
 
   applicationName: "Yohan Portfolio",
 
@@ -88,9 +88,14 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 
   alternates: {

@@ -6,11 +6,14 @@ import SummarySection from "@/components/About/SummarySection";
 import CompetenciesSection from "@/components/About/CompetenciesSection";
 import CTA from "@/components/Common/CTA";
 
-// SEO Metadata (Place this in a separate metadata export for App Router)
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "About Yohan Awishka | Full Stack Developer & Software Engineer",
-        description: "Experienced Full Stack Developer specializing in Next.js, React, Laravel, and modern web technologies. Building fast, scalable, and SEO-optimized web applications.",
+        title:
+        {
+            default: "About Yohan | Software Engineer",
+            template: "%s | Yohan Awishka Portfolio",
+        },
+        description: "Experienced Full Stack Developer specializing in Next.js, Laravel, and modern web technologies. Building fast, scalable, and SEO-optimized web applications.",
         keywords: [
             "Yohan Awishka",
             "Full Stack Developer",

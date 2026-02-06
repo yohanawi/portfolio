@@ -79,7 +79,6 @@ const experiences: Experience[] = [
     }
 ];
 
-
 type ExperienceCardProps = {
     experience: Experience;
     index: number;
@@ -89,17 +88,12 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
     const isEven = index % 2 === 0;
 
     return (
-        <div
-            className="relative flex flex-col gap-8 md:flex-row animate-fade-in-up"
-            style={{ animationDelay: `${index * 150}ms` }}
-        >
-            {/* Timeline Line and Dot (Desktop) */}
+        <div className="relative flex flex-col gap-8 md:flex-row animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }} >
             <div className="hidden md:flex md:flex-col md:items-center md:w-24">
                 <div className="relative flex items-center justify-center w-16 h-16 border-4 rounded-full bg-brand-crimson-red/10 border-brand-gray">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-crimson-red text-brand-white">
                         <Briefcase size={20} />
                     </div>
-                    {/* Pulsing effect */}
                     <div className="absolute inset-0 rounded-full bg-brand-crimson-red animate-ping opacity-20"></div>
                 </div>
                 {index < experiences.length - 1 && (
@@ -107,16 +101,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
                 )}
             </div>
 
-            {/* Content Card */}
             <article className="flex-1 p-8 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-2xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2">
-                {/* Mobile Timeline Dot */}
                 <div className="absolute flex items-center justify-center w-12 h-12 border-4 rounded-full -left-6 top-8 md:hidden bg-brand-crimson-red/10 border-brand-gray">
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-crimson-red">
                         <Briefcase size={12} className="text-brand-white" />
                     </div>
                 </div>
 
-                {/* Header */}
                 <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-start md:justify-between">
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -138,12 +129,10 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
                     </div>
                 </div>
 
-                {/* Description */}
                 <p className="mb-6 leading-relaxed text-brand-light-gray">
                     {experience.description}
                 </p>
 
-                {/* Technologies */}
                 {experience.technologies && (
                     <div className="mb-6">
                         <h4 className="flex items-center gap-2 mb-3 text-sm font-semibold text-brand-white">
@@ -152,10 +141,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
                         </h4>
                         <div className="flex flex-wrap gap-2">
                             {experience.technologies.map((tech, idx) => (
-                                <span
-                                    key={idx}
-                                    className="px-3 py-1 text-xs font-semibold border rounded-full text-brand-crimson-red bg-brand-crimson-red/10 border-brand-crimson-red/20"
-                                >
+                                <span key={idx} className="px-3 py-1 text-xs font-semibold border rounded-full text-brand-crimson-red bg-brand-crimson-red/10 border-brand-crimson-red/20">
                                     {tech}
                                 </span>
                             ))}
@@ -163,7 +149,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
                     </div>
                 )}
 
-                {/* Responsibilities */}
                 <div className="mb-6">
                     <h4 className="flex items-center gap-2 mb-3 text-sm font-semibold text-brand-white">
                         <Target size={16} className="text-brand-crimson-red" />
@@ -179,7 +164,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
                     </ul>
                 </div>
 
-                {/* Achievements */}
                 {experience.achievements && experience.achievements.length > 0 && (
                     <div className="p-4 border rounded-lg bg-brand-crimson-red/5 border-brand-crimson-red/20">
                         <h4 className="flex items-center gap-2 mb-3 text-sm font-semibold text-brand-white">
@@ -197,7 +181,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
                     </div>
                 )}
 
-                {/* Decorative corner accent */}
                 <div className="absolute bottom-0 right-0 w-16 h-16 transition-opacity duration-300 border-b-2 border-r-2 opacity-0 rounded-br-2xl border-brand-crimson-red group-hover:opacity-100"></div>
             </article>
         </div>
@@ -206,10 +189,10 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
 
 const TimeLineSection = () => {
     return (
-        <section className="relative px-6 py-20">
+        <section className="relative px-6 py-16">
             <div className="max-w-5xl mx-auto">
                 <div className="mb-16 text-center">
-                    <h2 className="mb-4 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
+                    <h2 className="mb-2 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
                         Career <span className="text-brand-crimson-red">Timeline</span>
                     </h2>
                     <div className="flex items-center justify-center gap-3">
@@ -221,16 +204,13 @@ const TimeLineSection = () => {
                     </div>
                 </div>
 
-                {/* Timeline Container */}
                 <div className="relative ml-6 space-y-12 md:ml-0">
-                    {/* Vertical line for mobile */}
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-crimson-red via-brand-soft-red to-brand-crimson-red md:hidden"></div>
 
                     {experiences.map((exp, index) => (
                         <ExperienceCard key={index} experience={exp} index={index} />
                     ))}
 
-                    {/* Timeline end indicator */}
                     <div className="relative flex justify-center md:justify-start md:ml-8">
                         <div className="w-6 h-6 border-4 rounded-full shadow-lg bg-brand-crimson-red border-brand-gray"></div>
                     </div>
