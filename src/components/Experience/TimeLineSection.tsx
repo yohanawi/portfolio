@@ -88,7 +88,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
     const isEven = index % 2 === 0;
 
     return (
-        <div className="relative flex flex-col gap-8 md:flex-row animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }} >
+        <section className="relative flex flex-col gap-8 md:flex-row animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }} >
             <div className="hidden md:flex md:flex-col md:items-center md:w-24">
                 <div className="relative flex items-center justify-center w-16 h-16 border-4 rounded-full bg-brand-crimson-red/10 border-brand-gray">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-crimson-red text-brand-white">
@@ -183,7 +183,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) =>
 
                 <div className="absolute bottom-0 right-0 w-16 h-16 transition-opacity duration-300 border-b-2 border-r-2 opacity-0 rounded-br-2xl border-brand-crimson-red group-hover:opacity-100"></div>
             </article>
-        </div>
+        </section>
     );
 };
 
@@ -206,18 +206,13 @@ const TimeLineSection = () => {
 
                 <div className="relative ml-6 space-y-12 md:ml-0">
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-crimson-red via-brand-soft-red to-brand-crimson-red md:hidden"></div>
-
                     {experiences.map((exp, index) => (
                         <ExperienceCard key={index} experience={exp} index={index} />
                     ))}
-
-                    <div className="relative flex justify-center md:justify-start md:ml-8">
-                        <div className="w-6 h-6 border-4 rounded-full shadow-lg bg-brand-crimson-red border-brand-gray"></div>
-                    </div>
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default TimeLineSection;

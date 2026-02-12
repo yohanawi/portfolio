@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useRef } from "react";
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
+import React, { useRef } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -61,38 +61,31 @@ const ProjectSection: React.FC = () => {
 
     return (
         <section className="relative py-20 overflow-hidden bg-brand-gray" id="projects">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 left-0 rounded-full w-96 h-96 bg-brand-crimson-red/5 blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 rounded-full w-96 h-96 bg-brand-soft-red/5 blur-3xl"></div>
+            <div className="bg-blob-top-right" style={{ top: 0, left: 0 }} />
+            <div className="bg-blob-bottom-left" style={{ bottom: 0, right: 0 }} />
 
             <div className="relative z-10 px-6 mx-auto max-w-7xl">
-                {/* Section Title - Centered */}
-                <div className="mb-16 text-center">
-                    <h2 className="mb-4 text-4xl font-bold md:text-5xl text-brand-white">
+                <header className="mb-16 text-center">
+                    <h2 className="section-title">
                         Featured <span className="text-brand-crimson-red">Projects</span>
                     </h2>
                     <div className="flex items-center justify-center gap-3">
-                        <span className="w-12 h-px bg-brand-muted-gray"></span>
-                        <span className="text-sm font-semibold tracking-wider text-brand-crimson-red">
-                            MY WORK
-                        </span>
-                        <span className="w-12 h-px bg-brand-muted-gray"></span>
+                        <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
+                        <span className="section-subtitle">MY WORK</span>
+                        <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
                     <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
                         Explore my latest projects showcasing innovative solutions built with modern technologies
                     </p>
-                </div>
+                </header>
 
                 {/* Swiper Carousel */}
                 <div className="relative">
                     <Swiper
-                        modules={[Navigation, Pagination, Autoplay]}
+                        modules={[Navigation, Autoplay]}
                         spaceBetween={30}
                         slidesPerView={1}
-                        pagination={{
-                            clickable: true,
-                            bulletActiveClass: "swiper-pagination-bullet-active-custom",
-                        }}
+
                         autoplay={{
                             delay: 5000,
                             disableOnInteraction: false,
@@ -115,7 +108,7 @@ const ProjectSection: React.FC = () => {
                     >
                         {projects.map((project, index) => (
                             <SwiperSlide key={index}>
-                                <div className="relative flex flex-col h-full p-6 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-2xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2">
+                                <div className="relative flex flex-col h-full p-6 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-2xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2 min-h-[500px]">
                                     {/* Project Image Placeholder */}
                                     <div className="relative h-48 mb-5 overflow-hidden rounded-xl bg-gradient-to-br from-brand-crimson-red/20 to-brand-soft-red/20">
                                         {project.image ? (

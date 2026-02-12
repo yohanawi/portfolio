@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
 import { GraduationCap, Award, MapPin, Calendar, CheckCircle, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 
 interface EducationItem {
     degree: string;
@@ -58,53 +59,71 @@ const educationData: EducationItem[] = [
 ];
 
 const EducationSection: React.FC = () => {
+
     const [activeTab, setActiveTab] = useState<'education' | 'certifications'>('education');
+
+    const degreesCount = educationData.length;
+    const certsCount = educationData.reduce((acc, edu) => acc + (edu.certifications?.length || 0), 0);
+
+    const latestYear = Math.max(
+        ...educationData
+            .flatMap(edu => edu.certifications?.map(cert => parseInt(cert.year)) || [])
+            .filter(Boolean)
+    );
+
+    const StatsCounter: React.FC<{ end: number; label: string; icon: React.ReactNode }> = ({ end, label, icon }) => {
+        const { count, ref } = useCounterAnimation({ end, duration: 2000 });
+
+        return (
+            <div ref={ref} className="p-6 text-center transition-all border rounded-xl bg-brand-gray/50 border-brand-muted-gray/20 hover:border-brand-crimson-red/40 hover:shadow-lg">
+                <div className="flex items-center justify-center mb-3 text-brand-crimson-red">
+                    {icon}
+                </div>
+                <div className="mb-2 text-3xl font-bold text-brand-white">{count}</div>
+                <div className="text-sm text-brand-muted-gray">{label}</div>
+            </div>
+        );
+    };
 
     return (
         <section className="relative py-20 overflow-hidden bg-brand-gray" id="education">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 left-0 rounded-full w-96 h-96 bg-brand-crimson-red/5 blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 rounded-full w-96 h-96 bg-brand-soft-red/5 blur-3xl"></div>
+            <div className="bg-blob-top-right" style={{ top: 0, left: 0 }} />
+            <div className="bg-blob-bottom-left" style={{ bottom: 0, right: 0 }} />
 
             <div className="relative z-10 max-w-6xl px-6 mx-auto">
-                {/* Section Title - Centered */}
-                <div className="mb-16 text-center">
-                    <h2 className="mb-4 text-4xl font-bold md:text-5xl text-brand-white">
+                <header className="mb-16 text-center">
+                    <h2 className="section-title">
                         Education & <span className="text-brand-crimson-red">Certifications</span>
                     </h2>
                     <div className="flex items-center justify-center gap-3">
-                        <span className="w-12 h-px bg-brand-muted-gray"></span>
-                        <span className="text-sm font-semibold tracking-wider text-brand-crimson-red">
-                            ACADEMIC BACKGROUND
-                        </span>
-                        <span className="w-12 h-px bg-brand-muted-gray"></span>
+                        <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
+                        <span className="section-subtitle">ACADEMIC BACKGROUND</span>
+                        <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
                     <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
                         My academic journey and professional certifications that validate my expertise
                     </p>
-                </div>
+                </header>
 
                 {/* Tab Navigation */}
                 <div className="flex justify-center mb-12">
                     <div className="inline-flex p-1 border rounded-full bg-brand-gray/80 border-brand-muted-gray/20">
                         <button
                             onClick={() => setActiveTab('education')}
-                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                                activeTab === 'education'
-                                    ? 'bg-brand-crimson-red text-brand-white shadow-lg'
-                                    : 'text-brand-muted-gray hover:text-brand-light-gray'
-                            }`}
+                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === 'education'
+                                ? 'bg-brand-crimson-red text-brand-white shadow-lg'
+                                : 'text-brand-muted-gray hover:text-brand-light-gray'
+                                }`}
                         >
                             <GraduationCap className="inline-block mr-2" size={20} />
                             Education
                         </button>
                         <button
                             onClick={() => setActiveTab('certifications')}
-                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                                activeTab === 'certifications'
-                                    ? 'bg-brand-crimson-red text-brand-white shadow-lg'
-                                    : 'text-brand-muted-gray hover:text-brand-light-gray'
-                            }`}
+                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === 'certifications'
+                                ? 'bg-brand-crimson-red text-brand-white shadow-lg'
+                                : 'text-brand-muted-gray hover:text-brand-light-gray'
+                                }`}
                         >
                             <Award className="inline-block mr-2" size={20} />
                             Certifications
@@ -127,7 +146,7 @@ const EducationSection: React.FC = () => {
                                 <div className="flex flex-col gap-6 ml-4 md:flex-row md:items-start md:gap-8">
                                     {/* Icon */}
                                     <div className="flex-shrink-0">
-                                        <div className="flex items-center justify-center w-16 h-16 transition-colors rounded-xl bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red/20">
+                                        <div className="flex items-center justify-center w-16 h-16 text-white transition-colors rounded-xl bg-brand-crimson-red/10 group-hover:bg-brand-crimson-red/20">
                                             <GraduationCap size={32} />
                                         </div>
                                     </div>
@@ -137,7 +156,7 @@ const EducationSection: React.FC = () => {
                                         <h3 className="mb-2 text-2xl font-bold transition-colors text-brand-white group-hover:text-brand-crimson-red">
                                             {item.degree}
                                         </h3>
-                                        
+
                                         <div className="flex flex-wrap gap-4 mb-3 text-sm">
                                             <div className="flex items-center gap-2 text-brand-light-gray">
                                                 <GraduationCap size={16} className="text-brand-crimson-red" />
@@ -200,7 +219,7 @@ const EducationSection: React.FC = () => {
                                 style={{ animationDelay: `${idx * 50}ms` }}
                             >
                                 {/* Badge Icon */}
-                                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 transition-colors rounded-xl bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red/20">
+                                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-white transition-colors rounded-xl bg-brand-crimson-red/10 group-hover:bg-brand-crimson-red/20">
                                     <Award size={32} />
                                 </div>
 
@@ -241,32 +260,30 @@ const EducationSection: React.FC = () => {
                     </div>
                 )}
 
+
+
                 {/* Summary Stats */}
                 <div className="grid grid-cols-2 gap-4 mt-16 md:grid-cols-4">
-                    <div className="p-4 text-center transition-all border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40">
-                        <GraduationCap className="mx-auto mb-2 text-brand-crimson-red" size={32} />
-                        <div className="mb-1 text-2xl font-bold text-brand-crimson-red">
-                            {educationData.length}
-                        </div>
-                        <div className="text-xs text-brand-muted-gray">Degrees</div>
-                    </div>
-                    <div className="p-4 text-center transition-all border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40">
-                        <Award className="mx-auto mb-2 text-brand-crimson-red" size={32} />
-                        <div className="mb-1 text-2xl font-bold text-brand-crimson-red">
-                            {educationData.reduce((acc, edu) => acc + (edu.certifications?.length || 0), 0)}
-                        </div>
-                        <div className="text-xs text-brand-muted-gray">Certifications</div>
-                    </div>
-                    <div className="p-4 text-center transition-all border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40">
-                        <CheckCircle className="mx-auto mb-2 text-brand-crimson-red" size={32} />
-                        <div className="mb-1 text-2xl font-bold text-brand-crimson-red">100%</div>
-                        <div className="text-xs text-brand-muted-gray">Verified</div>
-                    </div>
-                    <div className="p-4 text-center transition-all border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40">
-                        <Calendar className="mx-auto mb-2 text-brand-crimson-red" size={32} />
-                        <div className="mb-1 text-2xl font-bold text-brand-crimson-red">2023</div>
-                        <div className="text-xs text-brand-muted-gray">Latest</div>
-                    </div>
+                    <StatsCounter
+                        end={degreesCount}
+                        label="Degrees"
+                        icon={<GraduationCap size={32} />}
+                    />
+                    <StatsCounter
+                        end={certsCount}
+                        label="Certifications"
+                        icon={<Award size={32} />}
+                    />
+                    <StatsCounter
+                        end={100}
+                        label="Verified"
+                        icon={<CheckCircle size={32} />}
+                    />
+                    <StatsCounter
+                        end={latestYear}
+                        label="Latest Year"
+                        icon={<Calendar size={32} />}
+                    />
                 </div>
             </div>
 

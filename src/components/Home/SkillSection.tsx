@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
 import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaDocker, FaAws } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel } from "react-icons/si";
+import React from "react";
+import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const skills = [
     {
@@ -42,39 +43,32 @@ const skills = [
 
 const SkillSection: React.FC = () => (
     <section className="relative py-20 overflow-hidden bg-brand-gray">
-        {/* Decorative background elements */}
-        <div className="absolute rounded-full top-10 left-10 w-72 h-72 bg-brand-crimson-red/5 blur-3xl"></div>
-        <div className="absolute rounded-full bottom-10 right-10 w-96 h-96 bg-brand-soft-red/5 blur-3xl"></div>
+        <div className="bg-blob-top-right" style={{ top: '2.5rem', left: '2.5rem' }} />
+        <div className="bg-blob-bottom-left" style={{ bottom: '2.5rem', right: '2.5rem' }} />
 
         <div className="relative z-10 max-w-6xl px-6 mx-auto">
-            {/* Section Title - Centered */}
-            <div className="mb-16 text-center">
-                <h2 className="mb-4 text-4xl font-bold md:text-5xl text-brand-white">
+            <header className="mb-16 text-center">
+                <h2 className="section-title">
                     Skills & <span className="text-brand-crimson-red">Tech Stack</span>
                 </h2>
                 <div className="flex items-center justify-center gap-3">
-                    <span className="w-12 h-px bg-brand-muted-gray"></span>
-                    <span className="text-sm font-semibold tracking-wider text-brand-crimson-red">
-                        WHAT I USE
-                    </span>
-                    <span className="w-12 h-px bg-brand-muted-gray"></span>
+                    <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
+                    <span className="section-subtitle">WHAT I USE</span>
+                    <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                 </div>
                 <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
                     A comprehensive toolkit of modern technologies I use to build robust, scalable applications
                 </p>
-            </div>
+            </header>
 
             {/* Skills Grid */}
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 {skills.map((group, groupIndex) => (
-                    <div
-                        key={group.category}
+                    <div key={group.category}
                         className="relative p-6 transition-all duration-300 border rounded-2xl bg-brand-gray/50 border-brand-muted-gray/20 hover:border-brand-crimson-red/40 hover:shadow-xl hover:shadow-brand-crimson-red/10 group"
                         style={{
                             animationDelay: `${groupIndex * 100}ms`
-                        }}
-                    >
-                        {/* Category Header */}
+                        }} >
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-1 h-8 rounded-full bg-brand-crimson-red"></div>
                             <h3 className="text-2xl font-bold transition-colors text-brand-white group-hover:text-brand-crimson-red">
@@ -85,52 +79,35 @@ const SkillSection: React.FC = () => (
                         {/* Skills List */}
                         <div className="space-y-4">
                             {group.items.map((item, itemIndex) => (
-                                <div
-                                    key={item.name}
-                                    className="relative"
+                                <div key={item.name} className="relative"
                                     style={{
                                         animationDelay: `${(groupIndex * 100) + (itemIndex * 50)}ms`
-                                    }}
-                                >
-                                    {/* Skill Info */}
+                                    }}>
                                     <div className="flex items-center justify-between mb-2">
                                         <div className="flex items-center gap-3">
-                                            <div className="flex items-center justify-center w-10 h-10 transition-all duration-300 rounded-lg bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red/20">
+                                            <div className="flex items-center justify-center w-10 h-10 text-white transition-all duration-300 rounded-lg bg-brand-crimson-red/10 group-hover:bg-brand-crimson-red/20">
                                                 <span className="text-xl">{item.icon}</span>
                                             </div>
                                             <span className="font-medium text-brand-light-gray">
                                                 {item.name}
                                             </span>
                                         </div>
+                                        {/* Animated Counter and Progress Bar */}
                                         <span className="text-sm font-semibold text-brand-muted-gray">
-                                            {item.level}%
+                                            <AnimatedCounter value={item.level} />
+                                            %
                                         </span>
                                     </div>
 
-                                    {/* Progress Bar */}
-                                    <div className="relative h-2 overflow-hidden rounded-full bg-brand-muted-gray/20">
-                                        <div
-                                            className="h-full transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-brand-crimson-red to-brand-soft-red"
-                                            style={{
-                                                width: `${item.level}%`,
-                                                animationDelay: `${(groupIndex * 100) + (itemIndex * 50)}ms`
-                                            }}
-                                        >
-                                            {/* Shimmer effect */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
-                                        </div>
-                                    </div>
+                                    <AnimatedProgressBar value={item.level} />
                                 </div>
                             ))}
                         </div>
-
-                        {/* Decorative corner accent */}
                         <div className="absolute top-0 right-0 w-16 h-16 transition-opacity duration-300 border-t-2 border-r-2 opacity-0 rounded-tr-2xl border-brand-crimson-red group-hover:opacity-100"></div>
                     </div>
                 ))}
             </div>
 
-            {/* Additional Tech Icons Showcase (Optional) */}
             <div className="mt-16 text-center">
                 <h3 className="mb-8 text-xl font-semibold text-brand-white">
                     Technologies I Work With
@@ -161,5 +138,35 @@ const SkillSection: React.FC = () => (
         `}</style>
     </section>
 );
+
+/**
+ * AnimatedCounter component for animating skill level numbers.
+ * Triggers at 50% viewport visibility.
+ */
+const AnimatedCounter: React.FC<{ value: number }> = ({ value }) => {
+    const { count, ref } = useCounterAnimation({ end: value, duration: 1500 });
+    return <span ref={ref}>{count}</span>;
+};
+
+/**
+ * AnimatedProgressBar component for animating progress bars.
+ * Triggers at 50% viewport visibility.
+ */
+const AnimatedProgressBar: React.FC<{ value: number }> = ({ value }) => {
+    const { count, ref } = useCounterAnimation({ end: value, duration: 1800 });
+
+    return (
+        <div className="relative h-2 overflow-hidden rounded-full bg-brand-muted-gray/20">
+            <div
+                ref={ref}
+                className="h-full transition-all duration-300 ease-out bg-gradient-to-r from-brand-crimson-red to-brand-soft-red rounded-full"
+                style={{
+                    width: `${count}%`,
+                    transformOrigin: 'left',
+                }}
+            />
+        </div>
+    );
+};
 
 export default SkillSection;
