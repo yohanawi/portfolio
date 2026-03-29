@@ -21,40 +21,20 @@ interface EducationItem {
 
 const educationData: EducationItem[] = [
     {
-        degree: 'B.Sc. in Computer Science',
-        institution: 'University of Colombo',
-        location: 'Colombo, Sri Lanka',
-        period: '2018 - 2022',
-        description: 'Graduated with First Class Honors. Specialized in Software Engineering and Web Technologies.',
-        certifications: [
-            {
-                name: 'AWS Certified Solutions Architect',
-                issuer: 'Amazon Web Services',
-                year: '2023',
-                credentialUrl: '#',
-            },
-            {
-                name: 'Scrum Master Certification',
-                issuer: 'Scrum Alliance',
-                year: '2023',
-                credentialUrl: '#',
-            },
-        ],
+        degree: 'Bachelor of Science (Honours) in Information Technology',
+        institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
+        location: 'Malabe, Sri Lanka',
+        period: '2022 - Present',
+        description:
+            'Currently pursuing a Bachelor of Science (Honours) in Information Technology, focusing on software development, web technologies, and modern application design. Gaining hands-on experience in full-stack development and industry best practices.',
     },
     {
-        degree: 'Diploma in Software Engineering',
-        institution: 'SLIIT',
-        location: 'Malabe, Sri Lanka',
-        period: '2016 - 2018',
-        description: 'Comprehensive program covering fundamentals of software development and programming.',
-        certifications: [
-            {
-                name: 'Microsoft Certified: Azure Developer Associate',
-                issuer: 'Microsoft',
-                year: '2022',
-                credentialUrl: '#',
-            },
-        ],
+        degree: 'G.C.E Advanced Level (Technology Stream)',
+        institution: 'Sri Gnanodaya Central College',
+        location: 'Divulapitiya, Sri Lanka',
+        period: '2018 - 2021',
+        description:
+            'Completed Advanced Level education in the Technology stream, building a strong foundation in engineering concepts, ICT, and problem-solving skills relevant to modern technology fields.',
     },
 ];
 

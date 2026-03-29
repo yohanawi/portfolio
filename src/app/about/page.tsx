@@ -16,14 +16,14 @@ export async function generateMetadata(): Promise<Metadata> {
         description: "Experienced Full Stack Developer specializing in Next.js, Laravel, and modern web technologies. Building fast, scalable, and SEO-optimized web applications.",
         keywords: [
             "Yohan Awishka",
-            "Full Stack Developer",
-            "Software Engineer",
-            "Next.js Developer",
-            "React Developer",
-            "Laravel Developer",
-            "Web Developer Sri Lanka",
-            "Frontend Developer",
-            "Backend Developer",
+            "Full Stack Developer Sri Lanka",
+            "Freelance Web Developer Sri Lanka",
+            "Next.js Developer Sri Lanka",
+            "React Developer Sri Lanka",
+            "Laravel Developer Sri Lanka",
+            "SEO Web Developer",
+            "Custom Web Applications",
+            "Web Development Services Sri Lanka",
         ],
         authors: [{ name: "Yohan Awishka" }],
         creator: "Yohan Awishka",
@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: "About Yohan Awishka | Full Stack Developer",
             description: "Experienced Full Stack Developer specializing in modern web technologies.",
             images: ["/images/twitter-about.jpg"],
-            creator: "@yourusername",
+            creator: "@yohanawishka",
         },
         robots: {
             index: true,
@@ -81,10 +81,13 @@ export default async function AboutPage() {
                         jobTitle: "Full Stack Developer",
                         description: "Experienced Full Stack Developer specializing in Next.js, React, Laravel, and modern web technologies.",
                         url: "https://yohanawishka.com",
+                        address: {
+                            "@type": "PostalAddress",
+                            "addressCountry": "Sri Lanka"
+                        },
                         sameAs: [
                             "https://github.com/yourusername",
                             "https://linkedin.com/in/yourusername",
-                            "https://twitter.com/yourusername",
                         ],
                         knowsAbout: [
                             "Next.js",

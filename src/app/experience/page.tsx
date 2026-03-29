@@ -7,23 +7,24 @@ import TimeLineSection from "@/components/Experience/TimeLineSection";
 // SEO Metadata (Place this in a separate metadata export for App Router)
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "Experience | Yohan Awishka - Professional Work History",
-        description: "Explore Yohan Awishka's professional experience as a Full Stack Developer, including freelance projects, internships, and key achievements in web development.",
+        title: "Work Experience | Yohan Awishka - Full Stack Web Developer Sri Lanka",
+        description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka. تخصص in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
         keywords: [
             "Yohan Awishka Experience",
-            "Full Stack Developer Experience",
-            "Web Developer Work History",
-            "Professional Experience",
+            "Full Stack Web Developer Sri Lanka",
+            "Web Developer Experience Sri Lanka",
             "Next.js Developer Experience",
-            "React Developer Portfolio",
-            "Laravel Developer Experience",
-            "Freelance Developer",
+            "React Developer Experience",
+            "Laravel Developer Portfolio",
+            "Freelance Web Developer Sri Lanka",
+            "Software Developer Work History",
+            "Web Development Projects Experience"
         ],
         authors: [{ name: "Yohan Awishka" }],
         creator: "Yohan Awishka",
         openGraph: {
-            title: "Experience | Yohan Awishka - Full Stack Developer",
-            description: "Professional experience and achievements in full-stack web development.",
+            title: "Work Experience | Yohan Awishka - Full Stack Web Developer Sri Lanka",
+            description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka. تخصص in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
             url: "https://yohanawishka.com/experience",
             siteName: "Yohan Awishka Portfolio",
             images: [
@@ -39,10 +40,10 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title: "Experience | Yohan Awishka - Full Stack Developer",
-            description: "Professional experience and achievements in web development.",
+            title: "Work Experience | Yohan Awishka - Full Stack Web Developer Sri Lanka",
+            description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka. تخصص in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
             images: ["/images/twitter-experience.jpg"],
-            creator: "@yourusername",
+            creator: "@yohanawishka",
         },
         robots: {
             index: true,

@@ -8,22 +8,22 @@ const CompetenciesSection = () => {
         {
             icon: <Sparkles size={24} />,
             title: "SEO-Optimized Websites",
-            description: "Building fast, search-engine friendly websites with perfect Core Web Vitals scores.",
+            description: "I build lightning-fast websites optimized for search engines, ensuring better Google rankings and visibility.",
         },
         {
             icon: <Rocket size={24} />,
             title: "Scalable Applications",
-            description: "Developing full-stack applications that grow with your business needs.",
+            description: "I develop scalable full-stack applications designed to handle growth and high user demand efficiently.",
         },
         {
             icon: <Lightbulb size={24} />,
-            title: "Clean UI/UX Design",
-            description: "Creating intuitive, user-friendly interfaces that enhance user experience.",
+            title: "Modern UI/UX Design",
+            description: "I create clean, modern, and user-focused interfaces that enhance engagement and usability.",
         },
         {
             icon: <Target size={24} />,
-            title: "Secure Authentication",
-            description: "Implementing robust security measures and modern authentication systems.",
+            title: "Secure Systems",
+            description: "I implement secure authentication, data protection, and best practices to ensure application safety.",
         },
     ];
 

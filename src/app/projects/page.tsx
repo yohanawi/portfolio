@@ -7,24 +7,26 @@ import ProjectSection from "@/components/Project/ProjectSection";
 // SEO Metadata(Place this in a separate metadata export for App Router)
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "Projects | Yohan Awishka - Full Stack Developer Portfolio",
-        description: "Explore my portfolio of web development projects including travel booking platforms, productivity apps, and e-learning systems built with Next.js, React, Laravel, and modern technologies.",
+        title: "Projects | Yohan Awishka - Full Stack Web Developer Portfolio",
+        description: "Discover Yohan Awishka's web development projects: from Next.js travel booking platforms to Laravel productivity apps and full-stack e-learning systems. SEO-optimized, scalable, and modern web solutions.",
         keywords: [
-            "Web Development Projects",
+            "Full Stack Developer Sri Lanka",
+            "Web Development Portfolio",
             "Next.js Projects",
-            "React Portfolio",
-            "Laravel Projects",
-            "Full Stack Projects",
-            "Yohan Awishka Projects",
-            "Travel Booking Platform",
-            "Task Management App",
-            "E-learning Platform",
+            "React Applications",
+            "Laravel Web Apps",
+            "Node.js Development",
+            "Tailwind CSS Projects",
+            "MySQL Projects",
+            "Yohan Awishka Portfolio",
+            "SEO Web Developer",
+            "Custom Web Applications"
         ],
         authors: [{ name: "Yohan Awishka" }],
         creator: "Yohan Awishka",
         openGraph: {
-            title: "Projects | Yohan Awishka - Full Stack Developer",
-            description: "Explore my portfolio of modern web applications and full-stack projects.",
+            title: "Yohan Awishka Projects | Full Stack Web Developer",
+            description: "Explore featured projects by Yohan Awishka, showcasing modern web development using Next.js, React, Laravel, Node.js, and more. Scalable and SEO-optimized applications.",
             url: "https://yohanawishka.com/projects",
             siteName: "Yohan Awishka Portfolio",
             images: [
@@ -40,10 +42,10 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title: "Projects | Yohan Awishka - Full Stack Developer",
-            description: "Explore my portfolio of modern web applications and full-stack projects.",
+            title: "Yohan Awishka Projects | Full Stack Web Developer",
+            description: "Explore featured projects by Yohan Awishka, showcasing modern web development using Next.js, React, Laravel, Node.js, and more. Scalable and SEO-optimized applications.",
             images: ["/images/twitter-projects.jpg"],
-            creator: "@yourusername",
+            creator: "@yohanawishka",
         },
         robots: {
             index: true,
@@ -66,6 +68,28 @@ export default async function ProjectsPage() {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Portfolio",
+                        name: "Yohan Awishka Portfolio",
+                        url: "https://yohanawishka.com/projects",
+                        description: "Featured web development projects by Yohan Awishka, built using Next.js, React, Laravel, Node.js, Tailwind CSS, and MySQL.",
+                        creator: {
+                            "@type": "Person",
+                            name: "Yohan Awishka",
+                            jobTitle: "Full Stack Developer",
+                            sameAs: [
+                                "https://github.com/yourusername",
+                                "https://linkedin.com/in/yourusername"
+                            ]
+                        },
+                        mainEntityOfPage: "https://yohanawishka.com/projects"
+                    })
+                }}
+            />
             <main className="relative min-h-screen overflow-hidden font-inter bg-brand-gray">
                 {/* Decorative background elements */}
                 <div className="fixed top-0 right-0 rounded-full w-96 h-96 bg-brand-crimson-red/5 blur-3xl"></div>

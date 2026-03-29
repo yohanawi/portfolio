@@ -5,13 +5,13 @@ import { Users, ChevronRight, Code, Target, Award, Rocket, } from "lucide-react"
 const SummarySection = () => {
 
     const highlights = [
-        "I build production-ready web applications with Next.js, Laravel, and modern UI frameworks.",
-        "I focus on performance, clean architecture, and user-centric design.",
-        "Hands-on experience with frontend and backend technologies.",
-        "Enjoy turning complex requirements into simple, elegant solutions.",
-        "Passionate about learning and adapting to new tech.",
+        "I design and develop high-performance web applications optimized for speed, SEO, and scalability.",
+        "I follow clean architecture and best coding practices to ensure maintainability and long-term success.",
+        "Experienced in both frontend and backend development, delivering complete full-stack solutions.",
+        "I transform complex business requirements into simple, intuitive, and user-friendly applications.",
+        "Continuously learning and adapting to the latest technologies to stay ahead in the industry.",
     ];
-
+    
     const skills = [
         {
             category: "Frontend",
@@ -29,7 +29,7 @@ const SummarySection = () => {
             items: [
                 "Node.js, Express",
                 "Laravel, PHP",
-                "REST APIs",
+                "REST APIs, GraphQL",
                 "JWT Authentication",
             ],
         },
@@ -51,6 +51,7 @@ const SummarySection = () => {
                 "Postman",
                 "Figma",
                 "VS Code",
+                "AWS",
             ],
         },
     ];
@@ -92,12 +93,12 @@ const SummarySection = () => {
                                     </div>
                                 </div>
                                 <div className="absolute p-4 border rounded-lg -top-4 -right-4 bg-brand-gray/90 border-brand-crimson-red/30 backdrop-blur-sm animate-float">
-                                    <div className="text-2xl font-bold text-brand-crimson-red">10+</div>
+                                    <div className="text-2xl font-bold text-brand-crimson-red">7+</div>
                                     <div className="text-xs text-brand-muted-gray">Technologies</div>
                                 </div>
 
                                 <div className="absolute p-4 border rounded-lg -bottom-4 -left-4 bg-brand-gray/90 border-brand-crimson-red/30 backdrop-blur-sm animate-float-delayed">
-                                    <div className="text-2xl font-bold text-brand-crimson-red">97%</div>
+                                    <div className="text-2xl font-bold text-brand-crimson-red">98%</div>
                                     <div className="text-xs text-brand-muted-gray">Satisfaction</div>
                                 </div>
                             </div>

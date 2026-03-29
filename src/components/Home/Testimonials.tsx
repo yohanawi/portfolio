@@ -93,7 +93,7 @@ const TestimonialsSection: React.FC = () => {
                         <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
                     <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
-                        Don't just take my word for it - hear what my clients have to say about working with me
+                        Hear from some of the amazing clients I've worked with! From startups to established companies, I help businesses bring their digital visions to life with clean, scalable, and high-performance web applications. My focus is on delivering value, solving complex problems, and creating experiences that exceed expectations. These testimonials reflect the trust and satisfaction of those I’ve collaborated with over the years.
                     </p>
                 </header>
 
@@ -198,8 +198,8 @@ const TestimonialsSection: React.FC = () => {
                     className="grid grid-cols-2 gap-6 mt-20 md:grid-cols-4"
                 >
                     {[
-                        { end: 50, suffix: "+", label: "Happy Clients" },
-                        { end: 100, suffix: "%", label: "Satisfaction Rate" },
+                        { end: 6, suffix: "+", label: "Happy Clients" },
+                        { end: 98, suffix: "%", label: "Satisfaction Rate" },
                         { end: 5, suffix: ".0", label: "Average Rating" },
                         { end: 3, suffix: "+", label: "Years Experience" },
                     ].map((stat, idx) => (

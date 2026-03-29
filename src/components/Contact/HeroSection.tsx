@@ -18,8 +18,12 @@ const HeroSection = () => {
                 </div>
 
                 <p className="max-w-3xl mx-auto mb-8 text-base leading-relaxed text-brand-light-gray animate-fade-in-up animation-delay-300">
-                    Have a project in mind or looking to hire a developer? Let's talk and turn your ideas into reality.
-                    I'm always excited to collaborate on new projects.
+                    Got an idea, a product, or a problem to solve?
+                    <br /><br />
+                    I help businesses and startups turn concepts into fast, scalable, and modern web applications.
+                    Whether you're building from scratch or improving an existing system - I'm here to make it happen.
+
+                    Let's create something impactful together.
                 </p>
             </div>
         </section>

@@ -1,9 +1,9 @@
 "use client";
 
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import React from "react";
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 const HeroSection: React.FC = () => {
     return (
@@ -96,7 +96,7 @@ const HeroSection: React.FC = () => {
 
                                 <div className="absolute bottom-0 left-0 p-3 border rounded-lg shadow-lg bg-brand-gray/90 border-brand-crimson-red/30 backdrop-blur-sm animate-float-delayed">
                                     <div className="text-xs font-semibold text-brand-muted-gray">Projects</div>
-                                    <div className="text-lg font-bold text-brand-crimson-red">50+</div>
+                                    <div className="text-lg font-bold text-brand-crimson-red">10+</div>
                                 </div>
                             </div>
                         </div>

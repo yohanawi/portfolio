@@ -2,6 +2,7 @@ type Project = {
   title: string;
   description: string;
   techStack: string[];
+  is_featured?: boolean;
   features: string[];
   role: string;
   category: string;
@@ -24,6 +25,7 @@ const projects: Project[] = [
     description:
       "A full-featured travel booking platform with SEO-optimized pages, admin CMS, and secure authentication.",
     techStack: ["Next.js", "Laravel", "Tailwind CSS", "MySQL", "JWT"],
+    is_featured: true,
     features: [
       "User authentication & role management",
       "SEO-friendly dynamic pages",
@@ -44,6 +46,7 @@ const projects: Project[] = [
     description:
       "A collaborative task management tool for teams, featuring real-time updates, notifications, and analytics dashboard.",
     techStack: ["Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    is_featured: false,
     features: [
       "Real-time task updates",
       "Team notifications",
@@ -64,6 +67,7 @@ const projects: Project[] = [
     description:
       "An e-learning platform with video courses, quizzes, and progress tracking for students and instructors.",
     techStack: ["Next.js", "Laravel", "Bootstrap", "MySQL"],
+    is_featured: true,
     features: [
       "Video course management",
       "Interactive quizzes",
@@ -84,6 +88,7 @@ const projects: Project[] = [
     description:
       "A modern, responsive portfolio website showcasing projects and skills with smooth animations and SEO optimization.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    is_featured: false,
     features: [
       "Smooth page transitions",
       "SEO optimized",
@@ -104,6 +109,7 @@ const projects: Project[] = [
     description:
       "Admin dashboard for managing products, orders, and customer data with advanced analytics and reporting.",
     techStack: ["React", "Node.js", "PostgreSQL", "Chart.js"],
+    is_featured: false,
     features: [
       "Product management system",
       "Order tracking",
@@ -124,6 +130,7 @@ const projects: Project[] = [
     description:
       "Real-time weather application with location-based forecasts, interactive maps, and weather alerts.",
     techStack: ["React", "OpenWeather API", "Tailwind CSS"],
+    is_featured: false,
     features: [
       "Current weather conditions",
       "7-day forecast",

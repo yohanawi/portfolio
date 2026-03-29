@@ -7,18 +7,16 @@ import React from "react";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const aboutData = {
-    description:
-        "I am a highly motivated, hardworking, and creative graduate with various skills. I aspire to become a video editor, UI/UX designer, front-end developer, back-end developer, and designer, as these roles align with my strongest abilities.",
     highlights: [
-        { icon: <Briefcase size={18} />, label: "Experience", value: "2 years" },
+        { icon: <Briefcase size={18} />, label: "Experience", value: "3 years" },
         { icon: <Briefcase size={18} />, label: "Freelance", value: "Available" },
         { icon: <Phone size={18} />, label: "Phone", value: "077-8638568" },
         { icon: <Mail size={18} />, label: "Email", value: "yohan.indrawansha2000@gmail.com" },
     ],
     stats: [
-        { number: "50+", label: "Projects Completed" },
-        { number: "2+", label: "Years Experience" },
-        { number: "100%", label: "Client Satisfaction" },
+        { number: "10+", label: "Projects Completed" },
+        { number: "3+", label: "Years Experience" },
+        { number: "98%", label: "Client Satisfaction" },
     ],
     cvUrl: "/cv/yohan-indrawansha-cv.pdf",
     imageUrl: "/assets/images/Notion.png",
@@ -90,7 +88,7 @@ const AboutSection: React.FC = () => {
                                 Full Stack Developer & Designer
                             </h3>
                             <p className="leading-relaxed text-brand-light-gray">
-                                {aboutData.description}
+                                Hi, I’m <strong>Yohan Awishka</strong>, a <strong>Full Stack Developer</strong> and creative designer based in Sri Lanka. I build scalable, SEO-friendly, and modern web applications using <strong>Next.js, React, Laravel, Node.js, Tailwind CSS, and MySQL</strong>. I’m passionate about creating seamless digital experiences and helping businesses grow online.
                             </p>
                         </div>
 

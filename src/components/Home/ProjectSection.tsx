@@ -1,10 +1,11 @@
 "use client";
 
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import React, { useRef } from "react";
+import { projects } from "@/data/ProjectData";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,52 +13,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-type Project = {
-    name: string;
-    description: string;
-    techStack: string[];
-    liveDemo: string;
-    github: string;
-    image?: string;
-};
-
-const projects: Project[] = [
-    {
-        name: "TaskFlow",
-        description: "Real-time collaborative Kanban board for seamless workflow management and team productivity.",
-        techStack: ["React", "TypeScript", "Node.js", "MongoDB", "Socket.io"],
-        liveDemo: "https://taskflow-demo.com",
-        github: "https://github.com/yourusername/taskflow",
-        image: "/projects/taskflow.jpg",
-    },
-    {
-        name: "EcoShop",
-        description: "Marketplace platform for verified sustainable and eco-friendly products with carbon tracking.",
-        techStack: ["Next.js", "TailwindCSS", "Firebase"],
-        liveDemo: "https://ecoshop-demo.com",
-        github: "https://github.com/yourusername/ecoshop",
-        image: "/projects/ecoshop.jpg",
-    },
-    {
-        name: "FitTrack",
-        description: "Comprehensive fitness tracking dashboard with visual analytics for workouts and nutrition.",
-        techStack: ["Vue", "Express", "PostgreSQL", "Chart.js"],
-        liveDemo: "https://fittrack-demo.com",
-        github: "https://github.com/yourusername/fittrack",
-        image: "/projects/fittrack.jpg",
-    },
-    {
-        name: "ChatBot AI",
-        description: "Intelligent chatbot powered by AI for customer support automation and engagement.",
-        techStack: ["Python", "FastAPI", "OpenAI", "Redis"],
-        liveDemo: "https://chatbot-demo.com",
-        github: "https://github.com/yourusername/chatbot",
-        image: "/projects/chatbot.jpg",
-    },
-];
 
 const ProjectSection: React.FC = () => {
     const swiperRef = useRef<SwiperType | null>(null);
+    const featuredProjects = projects.filter(project => project.is_featured);
 
     return (
         <section className="relative py-20 overflow-hidden bg-brand-gray" id="projects">
@@ -75,7 +34,7 @@ const ProjectSection: React.FC = () => {
                         <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
                     <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
-                        Explore my latest projects showcasing innovative solutions built with modern technologies
+                        Discover a curated selection of my featured projects, each crafted to solve real-world problems and deliver exceptional user experiences. From web applications to AI-powered solutions, these projects highlight my expertise in modern technologies, clean architecture, and innovative design. Explore live demos, GitHub repositories, and the tech stacks that bring these solutions to life.
                     </p>
                 </header>
 
@@ -106,7 +65,7 @@ const ProjectSection: React.FC = () => {
                         }}
                         className="pb-12"
                     >
-                        {projects.map((project, index) => (
+                        {featuredProjects.map((project, index) => (
                             <SwiperSlide key={index}>
                                 <div className="relative flex flex-col h-full p-6 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-2xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2 min-h-[500px]">
                                     {/* Project Image Placeholder */}
@@ -114,13 +73,13 @@ const ProjectSection: React.FC = () => {
                                         {project.image ? (
                                             <img
                                                 src={project.image}
-                                                alt={project.name}
+                                                alt={project.title}
                                                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                                             />
                                         ) : (
                                             <div className="flex items-center justify-center w-full h-full">
                                                 <span className="text-6xl font-bold text-brand-crimson-red/30">
-                                                    {project.name.charAt(0)}
+                                                    {project.title.charAt(0)}
                                                 </span>
                                             </div>
                                         )}
@@ -130,7 +89,7 @@ const ProjectSection: React.FC = () => {
 
                                     {/* Project Title */}
                                     <h3 className="mb-3 text-2xl font-bold transition-colors text-brand-white group-hover:text-brand-crimson-red">
-                                        {project.name}
+                                        {project.title}
                                     </h3>
 
                                     {/* Description */}
@@ -153,7 +112,7 @@ const ProjectSection: React.FC = () => {
                                     {/* Links */}
                                     <div className="flex gap-4 pt-4 border-t border-brand-muted-gray/20">
                                         <Link
-                                            href={project.liveDemo}
+                                            href={project.links.demo}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex items-center gap-2 text-sm font-semibold transition-colors text-brand-light-gray hover:text-brand-crimson-red"
@@ -163,7 +122,7 @@ const ProjectSection: React.FC = () => {
                                         </Link>
 
                                         <Link
-                                            href={project.github}
+                                            href={project.links.githubFrontend}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex items-center gap-2 text-sm font-semibold transition-colors text-brand-light-gray hover:text-brand-crimson-red"

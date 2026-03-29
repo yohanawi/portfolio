@@ -4,16 +4,16 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import AnimatedStatCard from "../Common/AnimatedStatCard";
 import { Briefcase, Code, Users, Award } from "lucide-react";
-
+ 
 const IconStatsSection = () => {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const isInView = useInView(sectionRef, { once: true, amount: 0.4 });
 
     const stats = [
         { icon: <Briefcase size={24} />, value: 3, suffix: "+", label: "Years Experience" },
-        { icon: <Code size={24} />, value: 50, suffix: "+", label: "Projects Completed" },
-        { icon: <Users size={24} />, value: 30, suffix: "+", label: "Happy Clients" },
-        { icon: <Award size={24} />, value: 100, suffix: "%", label: "Success Rate" },
+        { icon: <Code size={24} />, value: 10, suffix: "+", label: "Projects Completed" },
+        { icon: <Users size={24} />, value: 6, suffix: "+", label: "Happy Clients" },
+        { icon: <Award size={24} />, value: 98, suffix: "%", label: "Success Rate" },
     ];
 
     return (

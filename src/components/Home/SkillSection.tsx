@@ -2,15 +2,15 @@
 
 import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaDocker, FaAws } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel } from "react-icons/si";
-import React from "react";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
+import React from "react";
 
 const skills = [
     {
         category: "Frontend",
         items: [
             { name: "Next.js", icon: <SiNextdotjs />, level: 90 },
-            { name: "React", icon: <FaReact />, level: 95 },
+            { name: "React", icon: <FaReact />, level: 65 },
             { name: "Tailwind", icon: <SiTailwindcss />, level: 90 },
             { name: "HTML", icon: <FaHtml5 />, level: 95 },
             { name: "CSS", icon: <FaCss3Alt />, level: 90 },
@@ -21,20 +21,22 @@ const skills = [
         items: [
             { name: "Laravel", icon: <FaLaravel />, level: 85 },
             { name: "Node.js", icon: <FaNodeJs />, level: 80 },
+            { name: "Express", icon: <FaNodeJs />, level: 60 },
+            { name: "REST APIs", icon: <FaNodeJs />, level: 80 },
+            { name: "GraphQL", icon: <FaNodeJs />, level: 75 },
         ],
     },
     {
         category: "Database",
         items: [
             { name: "MySQL", icon: <SiMysql />, level: 85 },
-            { name: "PostgreSQL", icon: <SiPostgresql />, level: 80 },
+            { name: "PostgreSQL", icon: <SiPostgresql />, level: 60 },
         ],
     },
     {
         category: "DevOps / Tools",
         items: [
             { name: "Git", icon: <FaGitAlt />, level: 90 },
-            { name: "Docker", icon: <FaDocker />, level: 75 },
             { name: "AWS", icon: <FaAws />, level: 70 },
             { name: "Vercel", icon: <SiVercel />, level: 85 },
         ],
@@ -42,6 +44,7 @@ const skills = [
 ];
 
 const SkillSection: React.FC = () => (
+
     <section className="relative py-20 overflow-hidden bg-brand-gray">
         <div className="bg-blob-top-right" style={{ top: '2.5rem', left: '2.5rem' }} />
         <div className="bg-blob-bottom-left" style={{ bottom: '2.5rem', right: '2.5rem' }} />
@@ -57,7 +60,7 @@ const SkillSection: React.FC = () => (
                     <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                 </div>
                 <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
-                    A comprehensive toolkit of modern technologies I use to build robust, scalable applications
+                    I combine cutting-edge frontend, backend, and DevOps technologies to deliver high-quality solutions. From responsive user interfaces using React, Next.js, and TailwindCSS, to robust backend systems with Node.js, Laravel, and databases like MySQL and PostgreSQL, I ensure every project is reliable, scalable, and optimized. With tools like Docker, Git, AWS, and Vercel, I streamline development and deployment processes for seamless delivery.
                 </p>
             </header>
 
@@ -114,11 +117,8 @@ const SkillSection: React.FC = () => (
                 </h3>
                 <div className="flex flex-wrap items-center justify-center gap-6">
                     {skills.flatMap(group => group.items).map((item, index) => (
-                        <div
-                            key={`tech-${index}`}
-                            className="flex items-center justify-center w-16 h-16 transition-all duration-300 border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20 text-brand-muted-gray hover:border-brand-crimson-red hover:text-brand-crimson-red hover:scale-110 hover:shadow-lg hover:shadow-brand-crimson-red/20"
-                            title={item.name}
-                        >
+                        <div key={`tech-${index}`} title={item.name}
+                            className="flex items-center justify-center w-16 h-16 transition-all duration-300 border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20 text-brand-muted-gray hover:border-brand-crimson-red hover:text-brand-crimson-red hover:scale-110 hover:shadow-lg hover:shadow-brand-crimson-red/20">
                             <span className="text-3xl">{item.icon}</span>
                         </div>
                     ))}
@@ -157,9 +157,7 @@ const AnimatedProgressBar: React.FC<{ value: number }> = ({ value }) => {
 
     return (
         <div className="relative h-2 overflow-hidden rounded-full bg-brand-muted-gray/20">
-            <div
-                ref={ref}
-                className="h-full transition-all duration-300 ease-out bg-gradient-to-r from-brand-crimson-red to-brand-soft-red rounded-full"
+            <div ref={ref} className="h-full transition-all duration-300 ease-out rounded-full bg-gradient-to-r from-brand-crimson-red to-brand-soft-red"
                 style={{
                     width: `${count}%`,
                     transformOrigin: 'left',

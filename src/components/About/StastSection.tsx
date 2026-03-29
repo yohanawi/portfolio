@@ -12,9 +12,9 @@ const StatsSection: React.FC = () => {
     });
 
     const stats = [
-        { value: 50, suffix: "+", label: "Projects Completed" },
-        { value: 2, suffix: "+", label: "Years Experience" },
-        { value: 97, suffix: "%", label: "Client Satisfaction" },
+        { value: 10, suffix: "+", label: "Projects Completed" },
+        { value: 3, suffix: "+", label: "Years Experience" },
+        { value: 98, suffix: "%", label: "Client Satisfaction" },
         { value: 24, suffix: "/7", label: "Support Available" },
     ];
 

@@ -10,8 +10,7 @@ const menuItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
-    { name: "Experience", href: "/experience" },
-    { name: "Contact", href: "/contact" },
+    { name: "Experience", href: "/experience" }, 
 ];
 
 const Header: React.FC = () => {

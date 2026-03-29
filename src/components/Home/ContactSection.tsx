@@ -1,23 +1,9 @@
 "use client";
 
+import { Mail, Phone, MapPin, Send, CheckCircle, Linkedin, Github, Twitter, Facebook, Instagram, MessageSquare, User, AtSign } from "lucide-react";
 import React, { useState } from "react";
-import {
-    Mail,
-    Phone,
-    MapPin,
-    Send,
-    CheckCircle,
-    Linkedin,
-    Github,
-    Twitter,
-    Facebook,
-    Instagram,
-    MessageSquare,
-    User,
-    AtSign
-} from "lucide-react";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,33 +12,6 @@ const containerVariants = {
         transition: {
             staggerChildren: 0.15,
         },
-    },
-};
-
-const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
-    },
-};
-
-const slideLeft = {
-    hidden: { opacity: 0, x: -60 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.7, ease: "easeOut" },
-    },
-};
-
-const slideRight = {
-    hidden: { opacity: 0, x: 60 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.7, ease: "easeOut" },
     },
 };
 
@@ -89,12 +48,6 @@ const socialLinks = [
         url: "https://github.com/yourusername",
         icon: <Github size={20} />,
         color: "#333"
-    },
-    {
-        name: "Twitter",
-        url: "https://twitter.com/yourusername",
-        icon: <Twitter size={20} />,
-        color: "#1DA1F2"
     },
     {
         name: "Facebook",
@@ -160,7 +113,7 @@ const ContactSection: React.FC = () => {
                         <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
                     <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
-                        Have a project in mind or just want to chat? I'd love to hear from you. Drop me a message and I'll get back to you as soon as possible.
+                        Whether you have a project idea, a collaboration in mind, or just want to say hello, I’d love to hear from you! I specialize in building modern, optimized web applications using Next.js, Node.js, Laravel, Strapi, GraphQL, and AWS. Feel free to reach out for freelance projects, collaborations, or just to connect and share ideas.
                     </p>
                 </header>
 
@@ -174,11 +127,7 @@ const ContactSection: React.FC = () => {
 
                             <address className="space-y-4 not-italic">
                                 {contactInfo.map((info, index) => (
-                                    <Link
-                                        key={index}
-                                        href={info.href}
-                                        className="card flex items-center gap-4 group"
-                                    >
+                                    <Link key={index} href={info.href} className="flex items-center gap-4 card group">
                                         <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 transition-colors rounded-lg bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red group-hover:text-brand-white">
                                             {info.icon}
                                         </div>
@@ -210,19 +159,6 @@ const ContactSection: React.FC = () => {
                                 ))}
                             </ul>
                         </nav>
-
-                        <aside className="card bg-brand-crimson-red/5 border-brand-crimson-red/20">
-                            <div className="flex items-center gap-3 mb-2">
-                                <span className="relative flex w-3 h-3">
-                                    <span className="absolute inline-flex w-full h-full rounded-full opacity-75 bg-brand-crimson-red animate-ping" aria-hidden="true" />
-                                    <span className="relative inline-flex w-3 h-3 rounded-full bg-brand-crimson-red" />
-                                </span>
-                                <strong className="font-semibold text-brand-white">Available for Freelance</strong>
-                            </div>
-                            <p className="text-sm text-brand-light-gray">
-                                I'm currently available for freelance work and new opportunities. Let's create something amazing together!
-                            </p>
-                        </aside>
                     </aside>
 
                     <div className="relative card hover:border-brand-crimson-red/40">

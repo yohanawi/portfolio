@@ -45,8 +45,7 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 <p className="max-w-3xl mx-auto mb-8 text-base leading-relaxed text-brand-light-gray animate-fade-in-up animation-delay-300">
-                    Explore a selection of my best work. Each project demonstrates my ability to build robust,
-                    scalable, and user-focused applications using modern technologies.
+                    Explore a selection of Yohan Awishka's best work in web development. Each project demonstrates expertise in creating robust, scalable, and SEO-friendly applications using modern technologies such as Next.js, React, Laravel, Node.js, Tailwind CSS, and MySQL. From travel booking platforms to productivity tools and e-learning systems, these projects highlight problem-solving, clean architecture, and user-centric design.
                 </p>
 
                 {/* Tech Stack Showcase */}

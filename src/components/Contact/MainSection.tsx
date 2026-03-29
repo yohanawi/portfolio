@@ -50,11 +50,6 @@ const MainSection = () => {
             icon: <Linkedin size={22} />,
         },
         {
-            name: "Twitter",
-            url: "https://twitter.com/yourusername",
-            icon: <Twitter size={22} />,
-        },
-        {
             name: "Facebook",
             url: "https://facebook.com/yourusername",
             icon: <Facebook size={22} />,
@@ -80,8 +75,11 @@ const MainSection = () => {
                 <div className="animate-fade-in-left">
                     <div className="relative p-8 transition-all duration-300 border rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/40">
                         <h2 className="mb-6 text-2xl font-bold md:text-3xl text-brand-white font-poppins">
-                            Send Me a <span className="text-brand-crimson-red">Message</span>
+                            Start a <span className="text-brand-crimson-red">Conversation</span>
                         </h2>
+                        <p className="max-w-3xl mx-auto mb-8 text-base leading-relaxed text-brand-light-gray animate-fade-in-up animation-delay-300">
+                            Tell me about your project, timeline, or idea. I'll get back to you within 24 hours.
+                        </p>
                         <ContactForm />
                         <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 rounded-tr-2xl border-brand-crimson-red opacity-30"></div>
                     </div>
@@ -94,8 +92,10 @@ const MainSection = () => {
                             Contact <span className="text-brand-crimson-red">Information</span>
                         </h3>
                         <p className="mb-6 leading-relaxed text-brand-light-gray">
-                            Feel free to reach out through any of these channels. I'm always open to discussing new projects,
-                            creative ideas, or opportunities to be part of your vision.
+                            Have a project in mind or just want to say hi?
+                            <br /><br />
+                            You can reach me directly through these channels. I’m always open to discussing new ideas,
+                            freelance opportunities, or long-term collaborations.
                         </p>
 
                         <div className="space-y-4">
@@ -122,7 +122,7 @@ const MainSection = () => {
                     <div className="p-8 border rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20">
                         <h4 className="flex items-center gap-2 mb-6 text-xl font-bold text-brand-white font-poppins">
                             <Globe className="text-brand-crimson-red" size={24} />
-                            Follow Me
+                            Connect With Me
                         </h4>
                         <div className="flex flex-wrap gap-3">
                             {socialLinks.map((social, index) => (
@@ -152,7 +152,9 @@ const MainSection = () => {
                             </span>
                         </div>
                         <p className="text-sm text-brand-light-gray">
-                            I'm currently available for freelance work and new opportunities. Let's create something amazing together!
+                            Currently open for freelance projects, remote roles, and collaborations.
+                            <br /><br />
+                            If you're looking for a reliable developer who cares about performance, clean code, and real results - let's talk.
                         </p>
                     </div>
                 </div>

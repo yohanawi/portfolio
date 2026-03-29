@@ -25,7 +25,7 @@ const StatsSection = () => {
             label: "Technologies",
         },
         {
-            value: 97,
+            value: 98,
             suffix: "%",
             label: "Success Rate",
         },

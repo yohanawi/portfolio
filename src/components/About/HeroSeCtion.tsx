@@ -27,8 +27,10 @@ const HeroSection: React.FC = () => {
                 </h2>
 
                 <p className="max-w-3xl mx-auto mb-8 text-base leading-relaxed text-brand-light-gray animate-fade-in-up animation-delay-300">
-                    I'm a Full Stack Developer specializing in building fast, scalable, and SEO-optimized web applications
-                    using modern technologies. I turn complex problems into elegant solutions.
+                    I’m Yohan Awishka, a passionate Full Stack Developer and Software Engineer based in Sri Lanka. I specialize in building high-performance, scalable, and SEO-optimized web applications using modern technologies like Next.js, React, and Laravel.
+                    <br />
+                    I focus on creating clean, user-friendly digital experiences while ensuring speed, security, and maintainability. My goal is to transform complex ideas into simple, elegant, and impactful solutions that drive real business results.
+
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-400 font-inter">

@@ -4,7 +4,7 @@ import React from "react";
 
 const NAME = "Yohan Awishka";
 const ROLE = "Full Stack Developer";
-const TAGLINE = "Building seamless digital experiences.";
+const TAGLINE = "I build fast, scalable, and SEO-optimized web applications that help businesses grow online.";
 const YEAR = new Date().getFullYear();
 
 const socialLinks = [
@@ -48,6 +48,9 @@ const Footer: React.FC = () => (
                     </h3>
                     <p className="mt-1 text-sm font-medium text-brand-light-gray font-inter">{ROLE}</p>
                     <p className="mt-2 text-sm italic text-brand-muted-gray font-inter">{TAGLINE}</p>
+                    <p className="max-w-xs mt-2 text-xs text-brand-muted-gray font-inter">
+                        Based in Sri Lanka, I specialize in creating modern, high-performance websites and full-stack applications.
+                    </p>
                 </div>
 
                 {/* Social links */}

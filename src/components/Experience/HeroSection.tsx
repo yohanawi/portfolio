@@ -20,8 +20,11 @@ const HeroSection = () => {
                 </div>
 
                 <p className="max-w-3xl mx-auto mb-8 text-base leading-relaxed text-brand-light-gray animate-fade-in-up animation-delay-300">
-                    A summary of my professional and practical experience, highlighting growth, responsibility,
-                    and real-world impact in web development.
+                    A proven track record of building scalable, high-performance web applications
+                    for startups, businesses, and clients worldwide.
+                    <br /><br />
+                    From freelance projects to real-world problem solving, my experience reflects
+                    a strong focus on clean code, performance, and delivering real results.
                 </p>
             </div>
         </section>

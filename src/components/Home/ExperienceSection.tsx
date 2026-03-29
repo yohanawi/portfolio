@@ -1,57 +1,22 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
 import { Briefcase, Calendar, Award, ChevronRight } from 'lucide-react';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
+import React, { useEffect, useRef, useState } from 'react';
+import { experiences } from '@/data/ExperienceData';
 
-interface ExperienceItem {
-    role: string;
+interface Experience {
+    title?: string;
     company: string;
-    period: string;
-    achievements: string[];
-    type?: 'Full-time' | 'Freelance' | 'Contract';
+    duration?: string;
+    achievements?: string[];
+    type?: string;
 }
-
-const experiences: ExperienceItem[] = [
-    {
-        role: 'Frontend Developer',
-        company: 'Tech Solutions Inc.',
-        period: 'Jan 2022 - Present',
-        type: 'Full-time',
-        achievements: [
-            'Developed and launched a responsive e-commerce platform used by 10,000+ customers.',
-            'Optimized website performance, reducing load times by 40%.',
-            'Collaborated with designers to improve UI/UX, increasing user retention by 25%.',
-        ],
-    },
-    {
-        role: 'Freelance Web Developer',
-        company: 'Various Clients',
-        period: 'Jun 2020 - Dec 2021',
-        type: 'Freelance',
-        achievements: [
-            'Delivered 15+ custom websites for small businesses and startups.',
-            'Integrated payment gateways and booking systems for client projects.',
-            'Received 5-star ratings from all clients for quality and communication.',
-        ],
-    },
-    {
-        role: 'Junior Developer',
-        company: 'StartUp Digital',
-        period: 'Mar 2019 - May 2020',
-        type: 'Full-time',
-        achievements: [
-            'Built reusable React components for the company\'s design system.',
-            'Implemented responsive designs for mobile-first web applications.',
-            'Participated in code reviews and agile development processes.',
-        ],
-    },
-];
 
 const stats = [
     { label: "Years Experience", value: 3, suffix: "+" },
-    { label: "Projects Completed", value: 50, suffix: "+" },
-    { label: "Client Satisfaction", value: 100, suffix: "%" },
+    { label: "Projects Completed", value: 10, suffix: "+" },
+    { label: "Client Satisfaction", value: 98, suffix: "%" },
 ];
 
 const Counter: React.FC<{ value: number; suffix?: string }> = ({ value, suffix = "" }) => {
@@ -67,7 +32,7 @@ const Counter: React.FC<{ value: number; suffix?: string }> = ({ value, suffix =
 
 // Timeline item animation component
 const TimelineItem: React.FC<{
-    exp: ExperienceItem;
+    exp: Experience;
     idx: number;
     isEven: boolean;
 }> = ({ exp, idx, isEven }) => {
@@ -137,7 +102,7 @@ const TimelineItem: React.FC<{
                     {/* Header */}
                     <div className="mb-4">
                         <h3 className="mb-2 text-2xl font-bold transition-colors text-brand-white group-hover:text-brand-crimson-red">
-                            {exp.role}
+                            {exp.title}
                         </h3>
                         <div className="flex flex-wrap items-center gap-4 text-sm">
                             <div className="flex items-center gap-2 text-brand-light-gray">
@@ -146,7 +111,7 @@ const TimelineItem: React.FC<{
                             </div>
                             <div className="flex items-center gap-2 text-brand-muted-gray">
                                 <Calendar size={16} className="text-brand-crimson-red" />
-                                <span>{exp.period}</span>
+                                <span>{exp.duration}</span>
                             </div>
                         </div>
                     </div>
@@ -163,7 +128,7 @@ const TimelineItem: React.FC<{
                             </span>
                         </div>
                         <ul className="space-y-2">
-                            {exp.achievements.map((achievement, i) => (
+                            {exp.achievements?.slice(0, 2).map((achievement, i) => (
                                 <li
                                     key={i}
                                     className="flex items-start gap-3 text-sm text-brand-light-gray group/item"
@@ -205,7 +170,7 @@ const ExperienceSection: React.FC = () => (
                     <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                 </div>
                 <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
-                    A timeline of my professional growth and key achievements in the tech industry
+                    A detailed timeline showcasing my journey as a Full Stack Developer, highlighting professional growth, key projects, freelance work, and achievements using modern web technologies like Next.js, Node.js, Laravel, Strapi, MySQL, GraphQL, and AWS.
                 </p>
             </header>
 
@@ -233,12 +198,9 @@ const ExperienceSection: React.FC = () => (
             </div>
 
             {/* Stats Section (Optional) */}
-
-
             <div className="grid grid-cols-1 gap-6 mt-16 md:grid-cols-3">
                 {stats.map((stat, idx) => (
-                    <div
-                        key={stat.label}
+                    <div key={stat.label}
                         className="p-6 text-center transition-all border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40"
                     >
                         <div className="mb-2 text-4xl font-bold text-brand-crimson-red">

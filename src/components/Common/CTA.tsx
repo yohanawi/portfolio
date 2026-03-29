@@ -55,8 +55,8 @@ const CTA = () => {
         };
 
         animate(setResponseTime, 24);
-        animate(setExperience, 2);
-        animate(setProjects, 50);
+        animate(setExperience, 3);
+        animate(setProjects, 10);
     }, [startCount]);
 
     return (
@@ -79,24 +79,36 @@ const CTA = () => {
                             Let's Build Something{" "}
                             <span className="relative text-brand-crimson-red">
                                 Amazing
-                                <svg className="absolute bottom-0 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
-                                    <path d="M0 4C50 4 50 4 100 4C150 4 150 4 200 4" stroke="currentColor" strokeWidth="6" strokeLinecap="round" className="animate-draw" />
+                                <svg
+                                    className="absolute left-0 w-full -bottom-2"
+                                    viewBox="0 0 200 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M4 8.5C45.3333 4.83333 133.6 -1.7 196 9.5"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                        strokeLinecap="round"
+                                        className={startCount ? "animate-draw" : "opacity-0"}
+                                    />
                                 </svg>
                             </span>{" "}
                             Together
                         </h3>
 
                         <p className="max-w-2xl mx-auto mb-10 leading-relaxed text-brand-light-gray">
-                            Transform your vision into reality. I'm here to help you create stunning,
-                            high-performance web solutions that make an impact.
+                            Looking for a reliable Full Stack Developer to bring your ideas to life?
+                            <br />
+                            I specialize in building fast, scalable, and SEO-optimized web applications
+                            that help businesses grow and stand out online.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/contact"
-                                className="relative inline-flex items-center gap-2 px-8 py-2 font-bold transition-all duration-300 rounded-full group text-brand-white bg-brand-crimson-red hover:shadow-2xl hover:shadow-brand-crimson-red/40">
+                                className="relative inline-flex items-center gap-2 px-8 py-2 font-bold transition-all duration-300 rounded-full group text-brand-white bg-brand-crimson-red hover:scale-105">
                                 Start a Project
                                 <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
-                                <span className="absolute inset-0 transition-transform duration-300 origin-left scale-x-0 bg-gradient-to-r from-brand-soft-red to-brand-crimson-red group-hover:scale-x-100"></span>
                             </Link>
 
                             <Link href="mailto:yohan.indrawansha2000@gmail.com"

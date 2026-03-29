@@ -7,11 +7,11 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
 
         title: {
-            default: "Contact Yohan Awishka | Hire Full Stack Developer",
+            default: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
             template: "%s | Contact Yohan Awishka"
         },
 
-        description: "Get in touch with Yohan Awishka for web development projects, freelance work, or collaboration opportunities.",
+        description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
         keywords: [
             "Contact Yohan Awishka",
             "Hire Full Stack Developer",
@@ -21,12 +21,26 @@ export async function generateMetadata(): Promise<Metadata> {
             "React Developer Contact",
             "Laravel Developer",
             "Web Development Services",
+            "Contact Yohan Awishka",
+            "Full Stack Web Developer Sri Lanka",
+            "Hire Web Developer Sri Lanka",
+            "Next.js Developer Sri Lanka",
+            "React Developer Sri Lanka",
+            "Laravel Developer Sri Lanka",
+            "Freelance Web Developer",
+            "Remote Web Developer",
+            "Web Developer Portfolio Contact",
+            "best portfolio website developer Sri Lanka",
+            "affordable web developer Sri Lanka",
+            "Next.js developer for startups",
+            "build ecommerce website Sri Lanka",
+            "custom web app developer Sri Lanka"
         ],
         authors: [{ name: "Yohan Awishka" }],
         creator: "Yohan Awishka",
         openGraph: {
-            title: "Contact Yohan Awishka | Full Stack Developer",
-            description: "Get in touch for web development projects and collaboration opportunities.",
+            title: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
+            description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
             url: "https://yohanawishka.com/contact",
             siteName: "Yohan Awishka Portfolio",
             images: [
@@ -42,11 +56,11 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            site: "@yourusername",
-            title: "Contact Yohan Awishka | Full Stack Developer",
-            description: "Get in touch for web development projects and collaboration.",
+            site: "@yohanawishka",
+            title: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
+            description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
             images: ["/images/twitter-contact.jpg"],
-            creator: "@yourusername",
+            creator: "@yohanawishka",
         },
         robots: {
             index: true,
@@ -77,7 +91,7 @@ export default async function ContactPage() {
                         "@type": "ContactPage",
                         "@id": "https://yohanawishka.com/contact",
                         name: "Contact Yohan Awishka",
-                        description: "Contact page of Yohan Awishka, Full Stack Developer",
+                        description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
                         url: "https://yohanawishka.com/contact",
                         mainEntity: {
                             "@type": "Person",
@@ -86,11 +100,10 @@ export default async function ContactPage() {
                             jobTitle: "Full Stack Developer",
                             url: "https://yohanawishka.com",
                             email: "mailto:yohan.indrawansha2000@gmail.com",
-                            telephone: "+94-77-863-8568",
+                            telephone: "+94778638568",
                             sameAs: [
                                 "https://github.com/yourusername",
                                 "https://linkedin.com/in/yourusername",
-                                "https://twitter.com/yourusername"
                             ],
                             address: {
                                 "@type": "PostalAddress",
