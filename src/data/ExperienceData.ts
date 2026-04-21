@@ -1,5 +1,6 @@
 type Experience = {
   title: string;
+  id: string;
   company: string;
   duration: string;
   type: string;
@@ -12,6 +13,7 @@ type Experience = {
 const experiences: Experience[] = [
   {
     title: "Full Stack Web Developer",
+    id: "xess-global",
     company: "XESS Global",
     duration: "2024 – Present",
     type: "Full-time",
@@ -50,8 +52,10 @@ const experiences: Experience[] = [
       "Figma",
     ],
   },
+
   {
     title: "Web Developer (Part-time)",
+    id: "dynamicx-uk",
     company: "DynamicX (UK)",
     duration: "2025 – Present",
     type: "Part-time",
@@ -86,8 +90,10 @@ const experiences: Experience[] = [
       "AWS",
     ],
   },
+
   {
     title: "Full Stack Developer (Intern)",
+    id: "bluechip-asia-technology",
     company: "Bluechip Asia Technology",
     duration: "2022 (6 Months)",
     type: "Internship",
@@ -122,8 +128,10 @@ const experiences: Experience[] = [
       "JavaScript",
     ],
   },
+
   {
     title: "Freelance Full Stack Developer",
+    id: "self-employed",
     company: "Self-Employed",
     duration: "2023 – Present",
     type: "Freelance",

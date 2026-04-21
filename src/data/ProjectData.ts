@@ -46,7 +46,7 @@ const projects: Project[] = [
     description:
       "A collaborative task management tool for teams, featuring real-time updates, notifications, and analytics dashboard.",
     techStack: ["Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    is_featured: false,
+    is_featured: true,
     features: [
       "Real-time task updates",
       "Team notifications",
@@ -88,7 +88,7 @@ const projects: Project[] = [
     description:
       "A modern, responsive portfolio website showcasing projects and skills with smooth animations and SEO optimization.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    is_featured: false,
+    is_featured: true,
     features: [
       "Smooth page transitions",
       "SEO optimized",

@@ -18,7 +18,7 @@ module.exports = {
       colors: {
         'brand-dark': '#0B0B0B',           // Primary background
         'brand-gray': '#121212',           // Secondary background
-        'brand-crimson-red': '#E10600',    // Primary accent
+        'brand-crimson-red': '#B4182D',    // Primary accent
         'brand-soft-red': '#FF2C2C',       // Secondary accent
         'brand-muted-gray': '#B3B3B3',     // Muted text
         'brand-light-gray': '#E5E5E5',     // Light text

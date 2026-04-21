@@ -63,8 +63,6 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-5">
-            <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" />
-
             {/* Name Input */}
             <div className="relative">
                 <label htmlFor="name" className="block mb-2 text-sm font-semibold text-brand-light-gray">
@@ -77,7 +75,7 @@ export default function ContactForm() {
                         id="name"
                         name="name"
                         autoComplete="name"
-                        placeholder="John Doe"
+                        placeholder="Enter your name"
                         value={form.name}
                         onChange={handleChange}
                         disabled={submitted}
@@ -101,7 +99,7 @@ export default function ContactForm() {
                         id="email"
                         name="email"
                         autoComplete="email"
-                        placeholder="john@example.com"
+                        placeholder="Enter your email"
                         value={form.email}
                         onChange={handleChange}
                         disabled={submitted}
@@ -124,7 +122,7 @@ export default function ContactForm() {
                         type="text"
                         id="subject"
                         name="subject"
-                        placeholder="Project Inquiry"
+                        placeholder="Enter the subject"
                         value={form.subject}
                         onChange={handleChange}
                         disabled={submitted}

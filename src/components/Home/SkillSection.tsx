@@ -1,7 +1,7 @@
 "use client";
 
 import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaDocker, FaAws } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel, SiExpress, SiPostman, SiGraphql } from "react-icons/si";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 import React from "react";
 
@@ -21,9 +21,9 @@ const skills = [
         items: [
             { name: "Laravel", icon: <FaLaravel />, level: 85 },
             { name: "Node.js", icon: <FaNodeJs />, level: 80 },
-            { name: "Express", icon: <FaNodeJs />, level: 60 },
-            { name: "REST APIs", icon: <FaNodeJs />, level: 80 },
-            { name: "GraphQL", icon: <FaNodeJs />, level: 75 },
+            { name: "Express", icon: <SiExpress />, level: 60 },
+            { name: "REST APIs", icon: <SiPostman />, level: 80 },
+            { name: "GraphQL", icon: <SiGraphql />, level: 75 },
         ],
     },
     {

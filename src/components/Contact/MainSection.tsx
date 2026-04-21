@@ -41,34 +41,34 @@ const MainSection = () => {
     const socialLinks = [
         {
             name: "GitHub",
-            url: "https://github.com/yourusername",
+            url: "https://github.com/yohanawi",
             icon: <Github size={22} />,
         },
         {
             name: "LinkedIn",
-            url: "https://linkedin.com/in/yourusername",
+            url: "https://www.linkedin.com/in/yohan-awishka-indrawansha/",
             icon: <Linkedin size={22} />,
         },
         {
             name: "Facebook",
-            url: "https://facebook.com/yourusername",
+            url: "#",
             icon: <Facebook size={22} />,
         },
         {
             name: "Instagram",
-            url: "https://instagram.com/yourusername",
+            url: "#",
             icon: <Instagram size={22} />,
         },
         {
             name: "YouTube",
-            url: "https://youtube.com/yourusername",
+            url: "#",
             icon: <Youtube size={22} />,
         }
     ];
 
     return (
 
-        <section className="relative px-6 py-12">
+        <section className="relative px-6 py-12 md:py-24">
             <div className="grid max-w-6xl grid-cols-1 gap-5 mx-auto lg:grid-cols-2">
 
                 {/* Left Side - Contact Form */}
@@ -158,6 +158,7 @@ const MainSection = () => {
                         </p>
                     </div>
                 </div>
+
             </div>
         </section >
     );

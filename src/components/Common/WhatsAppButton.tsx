@@ -4,7 +4,7 @@ import React, { useCallback } from 'react';
 import { BsWhatsapp } from 'react-icons/bs';
 
 export const WhatsAppButton: React.FC = () => {
-    const phoneNumber = '94781667267'; // Replace with your WhatsApp number
+    const phoneNumber = '94781667268'; // Replace with your WhatsApp number
     const message = 'Hello! I’m looking for professional support and would like to discuss how your services can help my project.'; // Optional: pre-filled message
 
     const handleClick = useCallback(() => {
@@ -16,7 +16,7 @@ export const WhatsAppButton: React.FC = () => {
 
     return (
         <div className="fixed z-50 bottom-6 left-6 group">
-            <span className="absolute px-3 py-1 text-xs text-white transition-all scale-0 -translate-y-1/2 bg-black rounded left-14 top-1/2 group-hover:scale-100">
+            <span className="absolute px-3 py-1 text-xs text-white transition-all scale-0 -translate-y-1/2 bg-black rounded w-44 left-16 top-1/2 group-hover:scale-100">
                 Chat with us on WhatsApp
             </span>
             <button onClick={handleClick} aria-label="Chat on WhatsApp"

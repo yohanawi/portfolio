@@ -20,12 +20,12 @@ const socialLinks = [
     },
     {
         icon: Linkedin,
-        url: "#",
+        url: "https://www.linkedin.com/in/yohan-awishka-indrawansha/",
         label: "LinkedIn",
     },
     {
         icon: Github,
-        url: "#",
+        url: "https://github.com/yohanawi",
         label: "GitHub",
     },
     {
@@ -48,7 +48,7 @@ const Footer: React.FC = () => (
                     </h3>
                     <p className="mt-1 text-sm font-medium text-brand-light-gray font-inter">{ROLE}</p>
                     <p className="mt-2 text-sm italic text-brand-muted-gray font-inter">{TAGLINE}</p>
-                    <p className="max-w-xs mt-2 text-xs text-brand-muted-gray font-inter">
+                    <p className="max-w-[25rem] mt-5 text-brand-muted-gray font-inter">
                         Based in Sri Lanka, I specialize in creating modern, high-performance websites and full-stack applications.
                     </p>
                 </div>

@@ -7,6 +7,7 @@ import React, { useState } from "react";
 
 type Experience = {
     title: string;
+    id: string;
     company: string;
     duration: string;
     type: string;
@@ -39,7 +40,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index, isOp
                 )}
             </div>
 
-            <article className="flex-1 p-8 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-2xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2">
+            <article id={`${experience.id}`} className="flex-1 p-8 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-2xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2">
                 <div className="absolute flex items-center justify-center w-12 h-12 border-4 rounded-full -left-6 top-8 md:hidden bg-brand-crimson-red/10 border-brand-gray">
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-crimson-red">
                         <Briefcase size={12} className="text-brand-white" />

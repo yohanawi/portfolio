@@ -4,9 +4,11 @@ import { Briefcase, Calendar, Award, ChevronRight } from 'lucide-react';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 import React, { useEffect, useRef, useState } from 'react';
 import { experiences } from '@/data/ExperienceData';
+import Link from 'next/link';
 
 interface Experience {
     title?: string;
+    id: string;
     company: string;
     duration?: string;
     achievements?: string[];
@@ -63,8 +65,7 @@ const TimelineItem: React.FC<{
     }, []);
 
     return (
-        <div
-            ref={itemRef}
+        <div ref={itemRef}
             className={`relative flex flex-col md:flex-row gap-8 transition-all duration-700 ${isEven ? 'md:flex-row-reverse' : ''
                 } ${isVisible
                     ? 'opacity-100 translate-y-0'
@@ -76,81 +77,83 @@ const TimelineItem: React.FC<{
         >
             {/* Timeline dot */}
             <div className="absolute z-10 w-4 h-4 transform border-4 rounded-full shadow-lg left-8 md:left-1/2 bg-brand-crimson-red border-brand-gray md:-translate-x-1/2 shadow-brand-crimson-red/50">
-                <div
-                    className={`absolute inset-0 rounded-full opacity-75 bg-brand-crimson-red transition-all duration-500 ${isVisible ? 'animate-ping' : 'scale-0'
-                        }`}
+                <div className={`absolute inset-0 rounded-full opacity-75 bg-brand-crimson-red transition-all duration-500 
+                    ${isVisible ?
+                        'animate-ping' : 'scale-0'
+                    }`}
                     style={{ animationDelay: `${idx * 150 + 300}ms` }}
                 />
             </div>
 
             {/* Content Card */}
             <div className={`md:w-1/2 ${isEven ? 'md:pr-12' : 'md:pl-12'}`}>
-                <div
-                    className={`relative p-6 ml-16 transition-all duration-500 border md:ml-0 group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-1 ${isVisible ? 'scale-100' : isEven ? 'scale-95 translate-x-12' : 'scale-95 -translate-x-12'
+                <Link href={`/experience/#${exp.id}`} >
+                    <div className={`relative p-6 ml-16 transition-all duration-500 border md:ml-0 group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-1 
+                    ${isVisible ?
+                            'scale-100' : isEven ? 'scale-95 translate-x-12' : 'scale-95 -translate-x-12'
                         }`}
-                    style={{
-                        transitionDelay: `${idx * 150 + 200}ms`,
-                    }}
-                >
-                    {/* Type Badge */}
-                    <div className="absolute -top-3 left-6">
-                        <span className="px-3 py-1 text-xs font-bold rounded-full shadow-lg text-brand-white bg-brand-crimson-red">
-                            {exp.type || 'Full-time'}
-                        </span>
-                    </div>
-
-                    {/* Header */}
-                    <div className="mb-4">
-                        <h3 className="mb-2 text-2xl font-bold transition-colors text-brand-white group-hover:text-brand-crimson-red">
-                            {exp.title}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-4 text-sm">
-                            <div className="flex items-center gap-2 text-brand-light-gray">
-                                <Briefcase size={16} className="text-brand-crimson-red" />
-                                <span className="font-medium">{exp.company}</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-brand-muted-gray">
-                                <Calendar size={16} className="text-brand-crimson-red" />
-                                <span>{exp.duration}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="w-full h-px mb-4 bg-gradient-to-r from-transparent via-brand-muted-gray/30 to-transparent"></div>
-
-                    {/* Achievements */}
-                    <div className="space-y-3">
-                        <div className="flex items-center gap-2 mb-3">
-                            <Award size={18} className="text-brand-crimson-red" />
-                            <span className="text-sm font-semibold text-brand-light-gray">
-                                Key Achievements
+                        style={{ transitionDelay: `${idx * 150 + 200}ms` }}
+                    >
+                        {/* Type Badge */}
+                        <div className="absolute -top-3 left-6">
+                            <span className="px-3 py-1 text-xs font-bold rounded-full shadow-lg text-brand-white bg-brand-crimson-red">
+                                {exp.type || 'Full-time'}
                             </span>
                         </div>
-                        <ul className="space-y-2">
-                            {exp.achievements?.slice(0, 2).map((achievement, i) => (
-                                <li
-                                    key={i}
-                                    className="flex items-start gap-3 text-sm text-brand-light-gray group/item"
-                                >
-                                    <ChevronRight
-                                        size={16}
-                                        className="flex-shrink-0 mt-0.5 text-brand-crimson-red transition-transform group-hover/item:translate-x-1"
-                                    />
-                                    <span className="leading-relaxed">{achievement}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
 
-                    {/* Decorative corner accent */}
-                    <div className="absolute bottom-0 right-0 w-16 h-16 transition-opacity duration-300 border-b-2 border-r-2 opacity-0 rounded-br-2xl border-brand-crimson-red group-hover:opacity-100"></div>
-                </div>
+                        {/* Header */}
+                        <div className="mb-4">
+                            <h3 className="mb-2 text-2xl font-bold transition-colors text-brand-white group-hover:text-brand-crimson-red">
+                                {exp.title}
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-4 text-sm">
+                                <div className="flex items-center gap-2 text-brand-light-gray">
+                                    <Briefcase size={16} className="text-brand-crimson-red" />
+                                    <span className="font-medium">{exp.company}</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-brand-muted-gray">
+                                    <Calendar size={16} className="text-brand-crimson-red" />
+                                    <span>{exp.duration}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="w-full h-px mb-4 bg-gradient-to-r from-transparent via-brand-muted-gray/30 to-transparent"></div>
+
+                        {/* Achievements */}
+                        <div className="space-y-3">
+                            <div className="flex items-center gap-2 mb-3">
+                                <Award size={18} className="text-brand-crimson-red" />
+                                <span className="text-sm font-semibold text-brand-light-gray">
+                                    Key Achievements
+                                </span>
+                            </div>
+                            <ul className="space-y-2">
+                                {exp.achievements?.slice(0, 2).map((achievement, i) => (
+                                    <li
+                                        key={i}
+                                        className="flex items-start gap-3 text-sm text-brand-light-gray group/item"
+                                    >
+                                        <ChevronRight
+                                            size={16}
+                                            className="flex-shrink-0 mt-0.5 text-brand-crimson-red transition-transform group-hover/item:translate-x-1"
+                                        />
+                                        <span className="leading-relaxed">{achievement}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Decorative corner accent */}
+                        <div className="absolute bottom-0 right-0 w-16 h-16 transition-opacity duration-300 border-b-2 border-r-2 opacity-0 rounded-br-2xl border-brand-crimson-red group-hover:opacity-100"></div>
+                    </div>
+                </Link>
             </div>
 
             {/* Empty space for alternating layout on desktop */}
             <div className="hidden md:block md:w-1/2"></div>
-        </div>
+        </div >
     );
 };
 

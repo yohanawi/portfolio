@@ -39,25 +39,25 @@ const contactInfo = [
 const socialLinks = [
     {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/yourusername",
+        url: "https://www.linkedin.com/in/yohan-awishka-indrawansha/e",
         icon: <Linkedin size={20} />,
         color: "#0077B5"
     },
     {
         name: "GitHub",
-        url: "https://github.com/yourusername",
+        url: "https://github.com/yohanawi",
         icon: <Github size={20} />,
         color: "#333"
     },
     {
         name: "Facebook",
-        url: "https://facebook.com/yourusername",
+        url: "#",
         icon: <Facebook size={20} />,
         color: "#1877F2"
     },
     {
         name: "Instagram",
-        url: "https://instagram.com/yourusername",
+        url: "#",
         icon: <Instagram size={20} />,
         color: "#E4405F"
     },
@@ -173,7 +173,7 @@ const ContactSection: React.FC = () => {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        placeholder="John Doe"
+                                        placeholder="Enter your name"
                                         value={form.name}
                                         onChange={handleChange}
                                         required
@@ -191,7 +191,7 @@ const ContactSection: React.FC = () => {
                                         type="email"
                                         id="email"
                                         name="email"
-                                        placeholder="john@example.com"
+                                        placeholder="Enter your email"
                                         value={form.email}
                                         onChange={handleChange}
                                         required
@@ -209,7 +209,7 @@ const ContactSection: React.FC = () => {
                                         type="text"
                                         id="subject"
                                         name="subject"
-                                        placeholder="Project Inquiry"
+                                        placeholder="Enter the subject"
                                         value={form.subject}
                                         onChange={handleChange}
                                         required

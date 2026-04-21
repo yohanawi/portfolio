@@ -1,9 +1,9 @@
 "use client";
 
 import { GraduationCap, Award, MapPin, Calendar, CheckCircle, ExternalLink } from 'lucide-react';
+import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 
 interface EducationItem {
     degree: string;
@@ -88,21 +88,21 @@ const EducationSection: React.FC = () => {
                 {/* Tab Navigation */}
                 <div className="flex justify-center mb-12">
                     <div className="inline-flex p-1 border rounded-full bg-brand-gray/80 border-brand-muted-gray/20">
-                        <button
-                            onClick={() => setActiveTab('education')}
-                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === 'education'
-                                ? 'bg-brand-crimson-red text-brand-white shadow-lg'
-                                : 'text-brand-muted-gray hover:text-brand-light-gray'
+                        <button onClick={() => setActiveTab('education')}
+                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 
+                                ${activeTab === 'education'
+                                    ? 'bg-brand-crimson-red text-brand-white shadow-lg'
+                                    : 'text-brand-muted-gray hover:text-brand-light-gray'
                                 }`}
                         >
                             <GraduationCap className="inline-block mr-2" size={20} />
                             Education
                         </button>
-                        <button
-                            onClick={() => setActiveTab('certifications')}
-                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === 'certifications'
-                                ? 'bg-brand-crimson-red text-brand-white shadow-lg'
-                                : 'text-brand-muted-gray hover:text-brand-light-gray'
+                        <button onClick={() => setActiveTab('certifications')}
+                            className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 
+                                ${activeTab === 'certifications'
+                                    ? 'bg-brand-crimson-red text-brand-white shadow-lg'
+                                    : 'text-brand-muted-gray hover:text-brand-light-gray'
                                 }`}
                         >
                             <Award className="inline-block mr-2" size={20} />
@@ -115,14 +115,10 @@ const EducationSection: React.FC = () => {
                 {activeTab === 'education' && (
                     <div className="space-y-8 animate-fadeIn">
                         {educationData.map((item, idx) => (
-                            <div
-                                key={idx}
-                                className="relative p-8 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-1"
-                                style={{ animationDelay: `${idx * 100}ms` }}
-                            >
+                            <div key={idx} className="relative p-8 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-1"
+                                style={{ animationDelay: `${idx * 100}ms` }}>
                                 {/* Decorative element */}
                                 <div className="absolute top-0 left-0 w-2 h-full rounded-l-2xl bg-gradient-to-b from-brand-crimson-red to-brand-soft-red"></div>
-
                                 <div className="flex flex-col gap-6 ml-4 md:flex-row md:items-start md:gap-8">
                                     {/* Icon */}
                                     <div className="flex-shrink-0">
@@ -169,10 +165,7 @@ const EducationSection: React.FC = () => {
                                                 </div>
                                                 <div className="flex flex-wrap gap-2">
                                                     {item.certifications.map((cert, cIdx) => (
-                                                        <span
-                                                            key={cIdx}
-                                                            className="px-3 py-1 text-xs font-medium border rounded-full text-brand-crimson-red bg-brand-crimson-red/10 border-brand-crimson-red/20"
-                                                        >
+                                                        <span key={cIdx} className="px-3 py-1 text-xs font-medium border rounded-full text-brand-crimson-red bg-brand-crimson-red/10 border-brand-crimson-red/20">
                                                             {cert.name}
                                                         </span>
                                                     ))}
@@ -193,8 +186,7 @@ const EducationSection: React.FC = () => {
                 {activeTab === 'certifications' && (
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 animate-fadeIn">
                         {educationData.flatMap(edu => edu.certifications || []).map((cert, idx) => (
-                            <div
-                                key={idx}
+                            <div key={idx}
                                 className="relative p-6 transition-all duration-300 border group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-2"
                                 style={{ animationDelay: `${idx * 50}ms` }}
                             >
@@ -221,10 +213,7 @@ const EducationSection: React.FC = () => {
 
                                 {/* Credential Link */}
                                 {cert.credentialUrl && (
-                                    <Link
-                                        href={cert.credentialUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <Link href={cert.credentialUrl} target="_blank" rel="noopener noreferrer"
                                         className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-semibold transition-colors rounded-lg text-brand-white bg-brand-crimson-red hover:bg-brand-soft-red"
                                     >
                                         <CheckCircle size={16} />
@@ -240,30 +229,12 @@ const EducationSection: React.FC = () => {
                     </div>
                 )}
 
-
-
                 {/* Summary Stats */}
                 <div className="grid grid-cols-2 gap-4 mt-16 md:grid-cols-4">
-                    <StatsCounter
-                        end={degreesCount}
-                        label="Degrees"
-                        icon={<GraduationCap size={32} />}
-                    />
-                    <StatsCounter
-                        end={certsCount}
-                        label="Certifications"
-                        icon={<Award size={32} />}
-                    />
-                    <StatsCounter
-                        end={100}
-                        label="Verified"
-                        icon={<CheckCircle size={32} />}
-                    />
-                    <StatsCounter
-                        end={latestYear}
-                        label="Latest Year"
-                        icon={<Calendar size={32} />}
-                    />
+                    <StatsCounter end={degreesCount} label="Degrees" icon={<GraduationCap size={32} />} />
+                    <StatsCounter end={certsCount} label="Certifications" icon={<Award size={32} />} />
+                    <StatsCounter end={100} label="Verified" icon={<CheckCircle size={32} />} />
+                    <StatsCounter end={latestYear} label="Latest Year" icon={<Calendar size={32} />} />
                 </div>
             </div>
 
