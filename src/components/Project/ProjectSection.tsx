@@ -11,6 +11,7 @@ import { Search, LayoutGrid, List, Layers, CheckCircle, ExternalLink, Github, Co
 
 type Project = {
     title: string;
+    slug: string;
     description: string;
     techStack: string[];
     features: string[];
@@ -44,7 +45,7 @@ const ProjectCard = ({
             {/* IMAGE */}
             {project.image ? (
                 <div className={`relative overflow-hidden rounded-xl bg-brand-muted-gray/10  ${view === "list" ? "w-48 h-32 flex-shrink-0" : "w-full h-52 mb-6"}`}>
-                    <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <Image src={project.image} alt={project.title} fill className="object-cover object-top transition-transform duration-500 group-hover:scale-110" />
                 </div>
             ) : (
                 <div className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-brand-crimson-red/20 to-brand-soft-red/20 ${view === "list" ? "w-48 h-32" : "w-full h-52 mb-6"} `}>
@@ -55,21 +56,19 @@ const ProjectCard = ({
             {/* CONTENT */}
             <div className="flex flex-col flex-1">
                 <div className="flex items-start justify-between mb-2">
-                    <h3 className={`text-xl font-bold text-brand-white group-hover:text-brand-crimson-red ${view === "list" ? "" : " w-[20rem]"}`}>
+                    <Link href={`/projects/${project.slug}`} className={`text-xl font-bold text-brand-white line-clamp-2 group-hover:text-brand-crimson-red ${view === "list" ? "" : " w-[20rem]"}`}>
                         {project.title}
-                    </h3>
+                    </Link>
                     <span className={`px-3 py-1 ${view === "list" ? "" : "w-[6rem]"} text-xs font-bold rounded-full bg-brand-crimson-red text-brand-white`}>
                         {project.category}
                     </span>
                 </div>
 
-                <p className="mb-4 text-sm text-brand-light-gray">
-                    {project.description}
-                </p>
+                <p className="mb-4 text-sm text-brand-light-gray line-clamp-3" dangerouslySetInnerHTML={{ __html: project.description }} />
 
                 {/* TECH STACK */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                    {project.techStack.map((tech) => (
+                    {project.techStack.slice(0, 5).map((tech) => (
                         <span key={tech} className="px-3 py-1 text-xs font-semibold rounded-full text-brand-crimson-red bg-brand-crimson-red/10">
                             {tech}
                         </span>
@@ -84,7 +83,7 @@ const ProjectCard = ({
                             Key Features
                         </h4>
                         <ul className="space-y-1">
-                            {project.features.map((feature, i) => (
+                            {project.features.slice(0, 4).map((feature, i) => (
                                 <li key={i} className="flex gap-2 text-xs text-brand-light-gray">
                                     <CheckCircle size={14} className="text-brand-crimson-red" />
                                     {feature}

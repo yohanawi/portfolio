@@ -70,7 +70,7 @@ const CTA = () => {
 
                     {/* Content */}
                     <div className="relative z-10">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-semibold border rounded-full text-brand-crimson-red border-brand-crimson-red/30 bg-brand-gray/80 backdrop-blur-sm">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-white border rounded-full border-brand-crimson-red/30 bg-brand-crimson-red/10 animate-fade-in-down">
                             <Sparkles size={16} className="animate-spin-slow" />
                             Available for New Projects
                         </div>

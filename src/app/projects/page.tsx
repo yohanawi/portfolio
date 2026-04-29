@@ -98,8 +98,6 @@ export default async function ProjectsPage() {
                 <HeroSection />
                 <StatsSection />
                 <ProjectSection />
-
-
                 <CTA />
             </main>
         </>
