@@ -5,6 +5,7 @@ import Footer from "@/components/Common/Footer";
 import ScrollTop from "@/components/Common/ScrollTop";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/Common/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -114,6 +115,7 @@ export default function RootLayout({
         <WhatsAppButton />
         <ScrollTop />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
