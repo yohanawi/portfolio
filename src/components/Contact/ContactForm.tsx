@@ -62,7 +62,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
             {/* Name Input */}
             <div className="relative">
                 <label htmlFor="name" className="block mb-2 text-sm font-semibold text-brand-light-gray">

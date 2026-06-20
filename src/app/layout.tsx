@@ -1,4 +1,3 @@
-import { Inter, Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import Header from "@/components/Common/Header";
 import Footer from "@/components/Common/Footer";
@@ -6,19 +5,6 @@ import ScrollTop from "@/components/Common/ScrollTop";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/Common/WhatsAppButton";
 import { Analytics } from "@vercel/analytics/next";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["400", "600", "700", "800"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yohanawishka.com"),
@@ -109,7 +95,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable}`}>
+      <body>
         <Header />
         <main>{children}</main>
         <WhatsAppButton />

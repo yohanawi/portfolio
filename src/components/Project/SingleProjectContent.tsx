@@ -369,12 +369,6 @@ function GallerySection({ gallery, title }: { gallery: string[]; title: string }
     const [visibleItems, setVisibleItems] = useState(INITIAL_GALLERY_ITEMS);
     const [lightbox, setLightbox] = useState<{ open: boolean; index: number }>({ open: false, index: 0 });
 
-    // Reset if the gallery source changes
-    useEffect(() => {
-        setVisibleItems(INITIAL_GALLERY_ITEMS);
-        setLightbox({ open: false, index: 0 });
-    }, [gallery, title]);
-
     const visibleGallery = gallery.slice(0, visibleItems);
     const hasMoreImages = gallery.length > visibleItems;
 
@@ -826,7 +820,7 @@ export default function SingleProjectContent({ slug }: Props) {
             {project.problem && <ProblemSection problem={project.problem} />}
             <SolutionSection features={project.features} />
             {project.gallery && project.gallery.length > 0 && (
-                <GallerySection gallery={project.gallery} title={project.title} />
+                <GallerySection key={project.slug} gallery={project.gallery} title={project.title} />
             )}
             <KeyHighlightsSection />
             {project.challenges && project.challenges.length > 0 && (

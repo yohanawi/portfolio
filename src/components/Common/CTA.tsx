@@ -40,7 +40,6 @@ const CTA = () => {
             target: number,
             duration = 1200
         ) => {
-            let start = 0;
             const startTime = performance.now();
 
             const step = (currentTime: number) => {
