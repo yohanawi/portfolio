@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import {
     ArrowLeft, ExternalLink, Github, Code, Target,
     Zap, Shield, Smartphone, CheckCircle, AlertTriangle,
-    Lightbulb, TrendingUp, User, Globe, Layers, Star, Award,
+    Lightbulb, TrendingUp, User, Globe, Layers, Star,
     Search, Database, Layout, Settings, Package, Monitor,
     Rocket, Code2,
 } from "lucide-react";

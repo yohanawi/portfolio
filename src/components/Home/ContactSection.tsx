@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send, CheckCircle, Linkedin, Github, Twitter, Facebook, Instagram, MessageSquare, User, AtSign } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, Linkedin, Github, Facebook, Instagram, MessageSquare, User, AtSign } from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";

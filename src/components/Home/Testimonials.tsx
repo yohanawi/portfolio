@@ -202,7 +202,7 @@ const TestimonialsSection: React.FC = () => {
                         { end: 98, suffix: "%", label: "Satisfaction Rate" },
                         { end: 5, suffix: ".0", label: "Average Rating" },
                         { end: 3, suffix: "+", label: "Years Experience" },
-                    ].map((stat, idx) => (
+                    ].map((stat) => (
                         <div key={stat.label}
                             className="p-6 text-center transition border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40">
                             <div className="mb-2 text-4xl font-bold text-brand-crimson-red">

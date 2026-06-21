@@ -1,6 +1,6 @@
 "use client";
 
-import { Coffee, Download, Mail, Users } from "lucide-react";
+import { Download, Mail, Users } from "lucide-react";
 import Link from "next/link";
 
 

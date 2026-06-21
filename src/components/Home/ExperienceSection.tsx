@@ -202,7 +202,7 @@ const ExperienceSection: React.FC = () => (
 
             {/* Stats Section (Optional) */}
             <div className="grid grid-cols-1 gap-6 mt-16 md:grid-cols-3">
-                {stats.map((stat, idx) => (
+                {stats.map((stat) => (
                     <div key={stat.label}
                         className="p-6 text-center transition-all border rounded-xl border-brand-muted-gray/20 bg-brand-gray/50 hover:border-brand-crimson-red/40"
                     >

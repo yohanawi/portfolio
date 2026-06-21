@@ -4,6 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "reac
 import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
+import Image from "next/image";
 import React, { useRef } from "react";
 import { projects } from "@/data/ProjectData";
 
@@ -71,9 +72,11 @@ const ProjectSection: React.FC = () => {
                                     {/* Project Image Placeholder */}
                                     <div className="relative h-48 mb-5 overflow-hidden rounded-xl bg-gradient-to-br from-brand-crimson-red/20 to-brand-soft-red/20">
                                         {project.image ? (
-                                            <img
+                                            <Image
                                                 src={project.image}
                                                 alt={project.title}
+                                                fill
+                                                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                                                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                                             />
                                         ) : (
