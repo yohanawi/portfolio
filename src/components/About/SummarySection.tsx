@@ -1,6 +1,7 @@
 "use client";
 
-import { Users, ChevronRight, Code, Target, Award, Rocket, } from "lucide-react";
+import { ChevronRight, Code, Target, Award, Rocket, } from "lucide-react";
+import Image from "next/image";
 
 const SummarySection = () => {
 
@@ -85,9 +86,11 @@ const SummarySection = () => {
                             <div className="relative">
                                 <div className="relative flex items-center justify-center rounded-full w-96 h-96 bg-gradient-to-br from-brand-crimson-red/20 to-brand-soft-red/10">
                                     <div className="flex items-center justify-center border-4 rounded-full w-80 h-80 bg-brand-gray border-brand-crimson-red/30">
-                                        <img
+                                        <Image
                                             src="/assets/images/Notion.png"
                                             alt="Profile"
+                                            width={288}
+                                            height={288}
                                             className="object-cover border-4 rounded-full shadow-lg w-72 h-72 border-brand-crimson-red"
                                         />
                                     </div>

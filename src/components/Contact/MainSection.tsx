@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Facebook, Instagram, Clock, Globe, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Instagram, Clock, Globe, Youtube } from "lucide-react";
 import Link from "next/link";
 
 import ContactForm from "./ContactForm";

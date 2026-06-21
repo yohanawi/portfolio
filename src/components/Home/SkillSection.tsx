@@ -1,6 +1,6 @@
 "use client";
 
-import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaDocker, FaAws } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaAws } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel, SiExpress, SiPostman, SiGraphql } from "react-icons/si";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 import React from "react";

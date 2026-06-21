@@ -48,6 +48,8 @@ jest.mock("framer-motion", () => {
       delete rest.animate;
       delete rest.exit;
       delete rest.initial;
+      delete rest.layout;
+      delete rest.layoutId;
       delete rest.transition;
       delete rest.variants;
       delete rest.whileInView;

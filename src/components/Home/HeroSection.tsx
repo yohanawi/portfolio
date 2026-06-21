@@ -2,6 +2,7 @@
 
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -83,9 +84,11 @@ const HeroSection: React.FC = () => {
                             <div className="relative">
                                 <div className="absolute rounded-full -inset-4 bg-gradient-to-r from-brand-crimson-red/20 to-brand-soft-red/20 blur-2xl animate-pulse-slow"></div>
                                 <div className="relative w-64 h-64 overflow-hidden border-4 rounded-full sm:w-80 sm:h-80 lg:w-96 lg:h-96 border-brand-crimson-red/30 bg-brand-gray/50 backdrop-blur-sm">
-                                    <img
+                                    <Image
                                         src="/assets/images/Notion.png"
                                         alt="Yohan Awishka"
+                                        fill
+                                        sizes="(min-width: 1024px) 24rem, (min-width: 640px) 20rem, 16rem"
                                         className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
                                     />
                                 </div>
