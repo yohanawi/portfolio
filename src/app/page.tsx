@@ -15,7 +15,7 @@ import ContactSection from "@/components/Home/ContactSection";
 export const metadata: Metadata = {
   title: "Yohan Awishka | Full Stack Web Developer",
   description:
-    "I'm Yohan Awishka, a Full Stack Web Developer specializing in Next.js, Laravel, and modern web technologies. I build fast, SEO-optimized, scalable web applications. Explore my portfolio, projects, and skills.",
+    "Yohan Awishka is a Full Stack Web Developer specializing in Next.js, Laravel & React, building fast, SEO-optimized web applications.",
   keywords: [
     "Yohan Awishka",
     "Full Stack Developer Sri Lanka",
@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://yohanawishka.com",
+    languages: {
+      "en-US": "https://yohanawishka.com",
+      "x-default": "https://yohanawishka.com",
+    },
   },
   openGraph: {
     title: "Yohan Awishka | Full Stack Web Developer",

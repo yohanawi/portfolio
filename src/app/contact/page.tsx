@@ -7,11 +7,12 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
 
         title: {
-            default: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
+            absolute: "Contact Yohan Awishka | Full Stack Web Developer",
+            default: "Contact Yohan Awishka | Full Stack Web Developer",
             template: "%s | Contact Yohan Awishka"
         },
 
-        description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
+        description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel, for freelance or remote work.",
         keywords: [
             "Contact Yohan Awishka",
             "Hire Full Stack Developer",
@@ -38,8 +39,8 @@ export async function generateMetadata(): Promise<Metadata> {
         authors: [{ name: "Yohan Awishka" }],
         creator: "Yohan Awishka",
         openGraph: {
-            title: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
-            description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
+            title: "Contact Yohan Awishka | Full Stack Web Developer",
+            description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel, for freelance or remote work.",
             url: "https://yohanawishka.com/contact",
             siteName: "Yohan Awishka Portfolio",
             images: [
@@ -56,8 +57,8 @@ export async function generateMetadata(): Promise<Metadata> {
         twitter: {
             card: "summary_large_image",
             site: "@yohanawishka",
-            title: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
-            description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
+            title: "Contact Yohan Awishka | Full Stack Web Developer",
+            description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel, for freelance or remote work.",
             images: ["/assets/images/portfolio home.png"],
             creator: "@yohanawishka",
         },
@@ -74,6 +75,10 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         alternates: {
             canonical: "https://yohanawishka.com/contact",
+            languages: {
+                "en-US": "https://yohanawishka.com/contact",
+                "x-default": "https://yohanawishka.com/contact",
+            },
         },
     };
 }
@@ -90,7 +95,7 @@ export default async function ContactPage() {
                         "@type": "ContactPage",
                         "@id": "https://yohanawishka.com/contact",
                         name: "Contact Yohan Awishka",
-                        description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
+                        description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel, for freelance or remote work.",
                         url: "https://yohanawishka.com/contact",
                         mainEntity: {
                             "@type": "Person",
