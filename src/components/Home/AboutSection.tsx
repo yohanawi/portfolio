@@ -1,16 +1,16 @@
 "use client";
 
+import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 import { Download, Mail, Phone, Briefcase } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const aboutData = {
     highlights: [
         { icon: <Briefcase size={18} />, label: "Experience", value: "3 years" },
         { icon: <Briefcase size={18} />, label: "Freelance", value: "Available" },
-        { icon: <Phone size={18} />, label: "Phone", value: "077-8638568" },
+        { icon: <Phone size={18} />, label: "Phone", value: "078-5161481" },
         { icon: <Mail size={18} />, label: "Email", value: "yohan.indrawansha2000@gmail.com" },
     ],
     stats: [
@@ -18,8 +18,8 @@ const aboutData = {
         { number: "3+", label: "Years Experience" },
         { number: "98%", label: "Client Satisfaction" },
     ],
-    cvUrl: "/cv/yohan-indrawansha-cv.pdf",
-    imageUrl: "/assets/images/Notion.png",
+    cvUrl: "/cv/yohan-awishka-cv.pdf",
+    imageUrl: "/assets/images/About.jpg",
 };
 
 const AnimatedStat: React.FC<{ number: string; label: string }> = ({ number, label }) => {
@@ -85,11 +85,9 @@ const AboutSection: React.FC = () => {
                     <div className="lg:col-span-2">
                         <div className="mb-8">
                             <h3 className="mb-4 text-2xl font-bold text-brand-white">
-                                Full Stack Developer & Designer
+                                Software Engineer • Full-Stack Developer
                             </h3>
-                            <p className="leading-relaxed text-brand-light-gray">
-                                Hi, I’m <strong>Yohan Awishka</strong>, a <strong>Full Stack Developer</strong> and creative designer based in Sri Lanka. I build scalable, SEO-friendly, and modern web applications using <strong>Next.js, React, Laravel, Node.js, Tailwind CSS, and MySQL</strong>. I’m passionate about creating seamless digital experiences and helping businesses grow online.
-                            </p>
+                            <p className="leading-relaxed text-brand-light-gray"> Hi, I'm <strong>Yohan Awishka</strong> - a passionate <strong>Software Engineer</strong> and <strong> Creative Designer</strong> from Sri Lanka. I transform ideas into fast, scalable, and visually engaging digital experiences. From modern web applications to intuitive user interfaces, I combine clean code with thoughtful design to build products that users love. <br /><br /> I specialize in <strong>Next.js, React, Laravel, Node.js, NestJS, Tailwind CSS, PostgreSQL, and MySQL</strong>, crafting SEO-friendly, high-performance applications that help startups, businesses, and brands stand out in the digital world. </p>
                         </div>
 
                         {/* Information Grid */}
@@ -110,7 +108,7 @@ const AboutSection: React.FC = () => {
                         <div className="mb-8">
                             <h4 className="mb-4 text-lg font-semibold text-brand-white">Expertise</h4>
                             <div className="flex flex-wrap gap-2">
-                                {["UI/UX Design", "Frontend Dev", "Backend Dev"].map((skill) => (
+                                {["Full-Stack Development", "UI/UX Design", "SEO Optimization", "Responsive Design"].map((skill) => (
                                     <span key={skill} className="px-4 py-2 text-sm font-medium transition-all duration-300 border rounded-full text-brand-light-gray border-brand-muted-gray/30 hover:border-brand-crimson-red hover:text-brand-crimson-red hover:bg-brand-crimson-red/5">
                                         {skill}
                                     </span>

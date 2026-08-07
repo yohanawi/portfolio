@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Instagram, Clock, Globe, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Clock, Globe } from "lucide-react";
 import Link from "next/link";
 
 import ContactForm from "./ContactForm";
@@ -18,22 +18,20 @@ const MainSection = () => {
         {
             icon: <Phone size={24} />,
             label: "Phone",
-            value: "077-8638568",
-            href: "tel:0778638568",
+            value: "078-5161481",
+            href: "tel:+94785161481",
             color: "text-brand-crimson-red"
         },
         {
             icon: <MapPin size={24} />,
             label: "Location",
             value: "Colombo, Sri Lanka",
-            href: "#",
             color: "text-brand-crimson-red"
         },
         {
             icon: <Clock size={24} />,
             label: "Availability",
             value: "Freelance / Full-time / Remote",
-            href: "#",
             color: "text-brand-crimson-red"
         },
     ];
@@ -49,21 +47,6 @@ const MainSection = () => {
             url: "https://www.linkedin.com/in/yohan-awishka-indrawansha/",
             icon: <Linkedin size={22} />,
         },
-        {
-            name: "Facebook",
-            url: "#",
-            icon: <Facebook size={22} />,
-        },
-        {
-            name: "Instagram",
-            url: "#",
-            icon: <Instagram size={22} />,
-        },
-        {
-            name: "YouTube",
-            url: "#",
-            icon: <Youtube size={22} />,
-        }
     ];
 
     return (
@@ -88,9 +71,9 @@ const MainSection = () => {
                 {/* Right Side - Contact Info */}
                 <div className="space-y-5 animate-fade-in-right">
                     <div className="p-8 border rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20">
-                        <h3 className="mb-6 text-2xl font-bold text-brand-white font-poppins">
+                        <h2 className="mb-6 text-2xl font-bold text-brand-white font-poppins">
                             Contact <span className="text-brand-crimson-red">Information</span>
-                        </h3>
+                        </h2>
                         <p className="mb-6 leading-relaxed text-brand-light-gray">
                             Have a project in mind or just want to say hi?
                             <br /><br />
@@ -99,31 +82,43 @@ const MainSection = () => {
                         </p>
 
                         <div className="space-y-4">
-                            {contactInfo.map((info, index) => (
-                                <Link key={index} href={info.href}
-                                    className="flex items-center gap-4 p-4 transition-all duration-300 border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-lg hover:shadow-brand-crimson-red/10 hover:-translate-y-1 group">
-                                    <div className={`flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-lg bg-brand-crimson-red/10 ${info.color} group-hover:bg-brand-crimson-red group-hover:text-brand-white transition-colors`}>
-                                        {info.icon}
+                            {contactInfo.map((info, index) => {
+                                const content = (
+                                    <>
+                                        <div className={`flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-lg bg-brand-crimson-red/10 ${info.color} group-hover:bg-brand-crimson-red group-hover:text-brand-white transition-colors`}>
+                                            {info.icon}
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-semibold text-brand-muted-gray">
+                                                {info.label}
+                                            </p>
+                                            <p className="font-medium transition-colors text-brand-white group-hover:text-brand-crimson-red">
+                                                {info.value}
+                                            </p>
+                                        </div>
+                                    </>
+                                );
+                                const className = "flex items-center gap-4 p-4 transition-all duration-300 border rounded-xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-lg hover:shadow-brand-crimson-red/10 hover:-translate-y-1 group";
+
+                                return info.href ? (
+                                    <Link key={index} href={info.href} className={className}>
+                                        {content}
+                                    </Link>
+                                ) : (
+                                    <div key={index} className={className}>
+                                        {content}
                                     </div>
-                                    <div>
-                                        <p className="text-xs font-semibold text-brand-muted-gray">
-                                            {info.label}
-                                        </p>
-                                        <p className="font-medium transition-colors text-brand-white group-hover:text-brand-crimson-red">
-                                            {info.value}
-                                        </p>
-                                    </div>
-                                </Link>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
 
                     {/* Social Links */}
                     <div className="p-8 border rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20">
-                        <h4 className="flex items-center gap-2 mb-6 text-xl font-bold text-brand-white font-poppins">
+                        <h3 className="flex items-center gap-2 mb-6 text-xl font-bold text-brand-white font-poppins">
                             <Globe className="text-brand-crimson-red" size={24} />
                             Connect With Me
-                        </h4>
+                        </h3>
                         <div className="flex flex-wrap gap-3">
                             {socialLinks.map((social, index) => (
                                 <Link

@@ -19,12 +19,12 @@ const HeroSection: React.FC = () => {
                 <div className="w-full max-w-6xl">
                     <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                         <div className="space-y-6 text-center lg:text-left animate-fade-in-up">
-                            <h1 className="mb-2 text-sm font-semibold tracking-wide uppercase sm:text-base text-brand-muted-gray animate-fade-in">
+                            <p className="mb-2 text-sm font-semibold tracking-wide uppercase sm:text-base text-brand-muted-gray animate-fade-in">
                                 Hello, I'm
-                            </h1>
-                            <h2 className="mb-4 text-4xl font-black tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text bg-gradient-to-r from-brand-white via-brand-light-gray to-brand-white animate-gradient">
+                            </p>
+                            <h1 className="mb-4 text-4xl font-black tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text bg-gradient-to-r from-brand-white via-brand-light-gray to-brand-white animate-gradient">
                                 Yohan <span className="text-brand-crimson-red">Awishka</span>
-                            </h2>
+                            </h1>
                             <div className="relative w-24 mx-auto h-1.5 mb-6 overflow-hidden rounded-full bg-gradient-to-r from-brand-crimson-red to-brand-soft-red lg:mx-0">
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer"></div>
                             </div>
@@ -59,13 +59,13 @@ const HeroSection: React.FC = () => {
 
                             {/* Social Links */}
                             <div className="flex justify-center gap-4 lg:justify-start">
-                                <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                                <Link href="https://github.com/yohanawi" target="_blank" rel="noopener noreferrer"
                                     className="flex items-center justify-center w-12 h-12 transition-all duration-300 border rounded-lg text-brand-muted-gray border-brand-muted-gray/30 hover:border-brand-crimson-red hover:text-brand-crimson-red hover:scale-110 hover:shadow-lg hover:shadow-brand-crimson-red/20"
                                     aria-label="GitHub">
                                     <Github size={20} />
                                 </Link>
 
-                                <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+                                <Link href="https://www.linkedin.com/in/yohan-awishka-indrawansha" target="_blank" rel="noopener noreferrer"
                                     className="flex items-center justify-center w-12 h-12 transition-all duration-300 border rounded-lg text-brand-muted-gray border-brand-muted-gray/30 hover:border-brand-crimson-red hover:text-brand-crimson-red hover:scale-110 hover:shadow-lg hover:shadow-brand-crimson-red/20"
                                     aria-label="LinkedIn">
                                     <Linkedin size={20} />

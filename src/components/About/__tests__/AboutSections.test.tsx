@@ -11,9 +11,9 @@ describe("About page sections", () => {
     expect(screen.getByRole("heading", { name: /yohan awishka/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /download cv/i })).toHaveAttribute(
       "href",
-      "/cv/yohan-cv.pdf",
+      "/cv/yohan-awishka-cv.pdf",
     );
-    expect(screen.getByRole("link", { name: /contact me/i })).toHaveAttribute("href", "#contact");
+    expect(screen.getByRole("link", { name: /contact me/i })).toHaveAttribute("href", "/contact");
   });
 
   it("renders professional philosophy and skill snapshot content", () => {
@@ -21,7 +21,7 @@ describe("About page sections", () => {
 
     expect(screen.getByRole("heading", { name: /my professional philosophy/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /skills snapshot/i })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: /profile/i })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: /yohan awishka/i })).toBeInTheDocument();
     expect(screen.getByText("Next.js, React")).toBeInTheDocument();
     expect(screen.getByText("Laravel, PHP")).toBeInTheDocument();
   });

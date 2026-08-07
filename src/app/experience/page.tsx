@@ -8,7 +8,7 @@ import TimeLineSection from "@/components/Experience/TimeLineSection";
 export async function generateMetadata(): Promise<Metadata> {
     return {
         title: "Work Experience | Yohan Awishka - Full Stack Web Developer Sri Lanka",
-        description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka. تخصص in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
+        description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka, specializing in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
         keywords: [
             "Yohan Awishka Experience",
             "Full Stack Web Developer Sri Lanka",
@@ -24,12 +24,12 @@ export async function generateMetadata(): Promise<Metadata> {
         creator: "Yohan Awishka",
         openGraph: {
             title: "Work Experience | Yohan Awishka - Full Stack Web Developer Sri Lanka",
-            description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka. تخصص in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
+            description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka, specializing in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
             url: "https://yohanawishka.com/experience",
             siteName: "Yohan Awishka Portfolio",
             images: [
                 {
-                    url: "/images/og-experience.jpg",
+                    url: "/assets/images/portfolio home.png",
                     width: 1200,
                     height: 630,
                     alt: "Yohan Awishka Professional Experience",
@@ -41,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
         twitter: {
             card: "summary_large_image",
             title: "Work Experience | Yohan Awishka - Full Stack Web Developer Sri Lanka",
-            description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka. تخصص in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
-            images: ["/images/twitter-experience.jpg"],
+            description: "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka, specializing in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
+            images: ["/assets/images/portfolio home.png"],
             creator: "@yohanawishka",
         },
         robots: {
@@ -65,6 +65,44 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ExperiencePage() {
     return (
         <>
+            {/* JSON-LD Structured Data for SEO */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ProfilePage",
+                        "@id": "https://yohanawishka.com/experience",
+                        name: "Work Experience | Yohan Awishka",
+                        description:
+                            "Explore the professional experience of Yohan Awishka, a Full Stack Web Developer based in Sri Lanka, specializing in Next.js, React, and Laravel with proven results in freelance and real-world projects.",
+                        url: "https://yohanawishka.com/experience",
+                        mainEntity: {
+                            "@type": "Person",
+                            "@id": "https://yohanawishka.com/#person",
+                            name: "Yohan Awishka",
+                            jobTitle: "Full Stack Web Developer",
+                            url: "https://yohanawishka.com",
+                            worksFor: {
+                                "@type": "Organization",
+                                name: "XESS Global",
+                            },
+                            sameAs: [
+                                "https://github.com/yohanawi",
+                                "https://www.linkedin.com/in/yohan-awishka-indrawansha",
+                            ],
+                            hasOccupation: [
+                                {
+                                    "@type": "Occupation",
+                                    name: "Full Stack Web Developer",
+                                    occupationLocation: { "@type": "Country", name: "Sri Lanka" },
+                                },
+                            ],
+                        },
+                    }),
+                }}
+            />
+
             <main className="relative min-h-screen overflow-hidden font-inter bg-brand-gray">
                 {/* Decorative background elements */}
                 <div className="fixed top-0 right-0 rounded-full w-96 h-96 bg-brand-crimson-red/5 blur-3xl"></div>

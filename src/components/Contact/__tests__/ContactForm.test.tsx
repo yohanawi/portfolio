@@ -5,11 +5,16 @@ import ContactForm from "../ContactForm";
 describe("ContactForm", () => {
   beforeEach(() => {
     jest.useFakeTimers();
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true }),
+    }) as unknown as typeof fetch;
   });
 
   afterEach(() => {
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
+    jest.restoreAllMocks();
   });
 
   it("shows validation errors when required fields are empty", async () => {

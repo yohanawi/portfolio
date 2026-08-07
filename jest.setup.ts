@@ -91,31 +91,35 @@ class MockIntersectionObserver implements IntersectionObserver {
   unobserve = jest.fn();
 }
 
-Object.defineProperty(window, "IntersectionObserver", {
-  writable: true,
-  value: MockIntersectionObserver,
-});
+// Guarded: API route tests run under the "node" environment (no `window`),
+// so these browser-only polyfills only apply for jsdom-based component tests.
+if (typeof window !== "undefined") {
+  Object.defineProperty(window, "IntersectionObserver", {
+    writable: true,
+    value: MockIntersectionObserver,
+  });
 
-Object.defineProperty(global, "IntersectionObserver", {
-  writable: true,
-  value: MockIntersectionObserver,
-});
+  Object.defineProperty(global, "IntersectionObserver", {
+    writable: true,
+    value: MockIntersectionObserver,
+  });
 
-Object.defineProperty(window, "matchMedia", {
-  writable: true,
-  value: jest.fn().mockImplementation((query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: jest.fn().mockImplementation((query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
 
-Object.defineProperty(window, "scrollTo", {
-  writable: true,
-  value: jest.fn(),
-});
+  Object.defineProperty(window, "scrollTo", {
+    writable: true,
+    value: jest.fn(),
+  });
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send, CheckCircle, Linkedin, Github, Facebook, Instagram, MessageSquare, User, AtSign } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Linkedin, Github, MessageSquare, User, AtSign } from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -25,21 +25,20 @@ const contactInfo = [
     {
         icon: <Phone size={24} />,
         label: "Phone",
-        value: "077-8638568",
-        href: "tel:0778638568",
+        value: "078-5161481",
+        href: "tel:+94785161481",
     },
     {
         icon: <MapPin size={24} />,
         label: "Location",
         value: "Colombo, Sri Lanka",
-        href: "#",
     },
 ];
 
 const socialLinks = [
     {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/yohan-awishka-indrawansha/e",
+        url: "https://www.linkedin.com/in/yohan-awishka-indrawansha",
         icon: <Linkedin size={20} />,
         color: "#0077B5"
     },
@@ -49,25 +48,14 @@ const socialLinks = [
         icon: <Github size={20} />,
         color: "#333"
     },
-    {
-        name: "Facebook",
-        url: "#",
-        icon: <Facebook size={20} />,
-        color: "#1877F2"
-    },
-    {
-        name: "Instagram",
-        url: "#",
-        icon: <Instagram size={20} />,
-        color: "#E4405F"
-    },
 ];
 
 const ContactSection: React.FC = () => {
 
-    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", company: "" });
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [submitError, setSubmitError] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -76,18 +64,34 @@ const ContactSection: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setSubmitError("");
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
 
-        setLoading(false);
-        setSubmitted(true);
+            if (!response.ok) {
+                const data = await response.json().catch(() => null);
+                throw new Error(data?.error || "Failed to send your message. Please try again later.");
+            }
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setForm({ name: "", email: "", subject: "", message: "" });
-            setSubmitted(false);
-        }, 3000);
+            setSubmitted(true);
+
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                setForm({ name: "", email: "", subject: "", message: "", company: "" });
+                setSubmitted(false);
+            }, 3000);
+        } catch (error) {
+            setSubmitError(
+                error instanceof Error ? error.message : "Failed to send your message. Please try again later.",
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -112,7 +116,7 @@ const ContactSection: React.FC = () => {
                         <span className="section-subtitle">LET'S CONNECT</span>
                         <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
-                    <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
+                    <p className="max-w-4xl mx-auto mt-4 text-brand-light-gray">
                         Whether you have a project idea, a collaboration in mind, or just want to say hello, I’d love to hear from you! I specialize in building modern, optimized web applications using Next.js, Node.js, Laravel, Strapi, GraphQL, and AWS. Feel free to reach out for freelance projects, collaborations, or just to connect and share ideas.
                     </p>
                 </header>
@@ -126,17 +130,29 @@ const ContactSection: React.FC = () => {
                             </p>
 
                             <address className="space-y-4 not-italic">
-                                {contactInfo.map((info, index) => (
-                                    <Link key={index} href={info.href} className="flex items-center gap-4 card group">
-                                        <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 transition-colors rounded-lg bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red group-hover:text-brand-white">
-                                            {info.icon}
+                                {contactInfo.map((info, index) => {
+                                    const content = (
+                                        <>
+                                            <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 transition-colors rounded-lg bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red group-hover:text-brand-white">
+                                                {info.icon}
+                                            </div>
+                                            <div>
+                                                <p className="text-xs font-semibold text-brand-muted-gray">{info.label}</p>
+                                                <p className="font-medium transition-colors text-brand-white group-hover:text-brand-crimson-red">{info.value}</p>
+                                            </div>
+                                        </>
+                                    );
+
+                                    return info.href ? (
+                                        <Link key={index} href={info.href} className="flex items-center gap-4 card group">
+                                            {content}
+                                        </Link>
+                                    ) : (
+                                        <div key={index} className="flex items-center gap-4 card group">
+                                            {content}
                                         </div>
-                                        <div>
-                                            <p className="text-xs font-semibold text-brand-muted-gray">{info.label}</p>
-                                            <p className="font-medium transition-colors text-brand-white group-hover:text-brand-crimson-red">{info.value}</p>
-                                        </div>
-                                    </Link>
-                                ))}
+                                    );
+                                })}
                             </address>
                         </div>
 
@@ -165,6 +181,20 @@ const ContactSection: React.FC = () => {
                         <h3 className="mb-6 text-2xl font-bold text-brand-white">Send Me a Message</h3>
 
                         <form onSubmit={handleSubmit} className="space-y-5">
+                            {/* Honeypot field - hidden from real users, catches basic bots */}
+                            <div className="absolute w-px h-px overflow-hidden opacity-0 -z-10" aria-hidden="true">
+                                <label htmlFor="home-company">Company</label>
+                                <input
+                                    type="text"
+                                    id="home-company"
+                                    name="company"
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    value={form.company}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
                             <div>
                                 <label htmlFor="name" className="block mb-2 text-sm font-semibold text-brand-light-gray">Your Name</label>
                                 <div className="relative">
@@ -233,6 +263,13 @@ const ContactSection: React.FC = () => {
                                     className="w-full px-4 py-3 border rounded-lg outline-none resize-none bg-brand-gray text-brand-white border-brand-muted-gray/30 focus:border-brand-crimson-red focus:ring-2 focus:ring-brand-crimson-red/20 placeholder:text-brand-muted-gray disabled:opacity-50"
                                 />
                             </div>
+
+                            {submitError && (
+                                <p className="flex items-center gap-2 text-sm text-red-500" role="alert">
+                                    <AlertCircle size={16} className="flex-shrink-0" />
+                                    {submitError}
+                                </p>
+                            )}
 
                             <button
                                 type="submit"

@@ -34,12 +34,12 @@ const HeroSection: React.FC = () => {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-400 font-inter">
-                    <Link href="/cv/yohan-cv.pdf" download
+                    <Link href="/cv/yohan-awishka-cv.pdf" download
                         className="inline-flex items-center gap-2 px-8 py-2 font-bold transition-all duration-300 rounded-full text-brand-white bg-brand-crimson-red hover:bg-brand-soft-red hover:shadow-lg hover:shadow-brand-crimson-red/30 hover:scale-105 group">
                         <Download size={20} className="transition-transform group-hover:translate-y-1" />
                         Download CV
                     </Link>
-                    <Link href="#contact"
+                    <Link href="/contact"
                         className="inline-flex items-center gap-2 px-8 py-2 font-bold text-white transition-all duration-300 border-2 rounded-full border-brand-crimson-red hover:bg-brand-crimson-red hover:text-brand-white hover:scale-105 group">
                         <Mail size={20} />
                         Contact Me

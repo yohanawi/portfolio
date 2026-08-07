@@ -6,12 +6,12 @@ describe("Home AboutSection", () => {
     render(<AboutSection />);
 
     expect(screen.getByRole("heading", { name: /about me/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /full stack developer & designer/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /software engineer.*full-stack developer/i })).toBeInTheDocument();
     expect(screen.getByText("UI/UX Design")).toBeInTheDocument();
-    expect(screen.getByText("Frontend Dev")).toBeInTheDocument();
+    expect(screen.getByText("Full-Stack Development")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /download cv/i })).toHaveAttribute(
       "href",
-      "/cv/yohan-indrawansha-cv.pdf",
+      "/cv/yohan-awishka-cv.pdf",
     );
     expect(screen.getByRole("img", { name: /yohan awishka/i })).toBeInTheDocument();
   });

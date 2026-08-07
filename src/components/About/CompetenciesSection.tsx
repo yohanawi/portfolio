@@ -31,9 +31,9 @@ const CompetenciesSection = () => {
         <section className="relative px-6 py-16">
             <div className="mx-auto max-w-7xl">
                 <div className="mb-16 text-center">
-                    <h3 className="mb-2 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
+                    <h2 className="mb-2 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
                         What I Do <span className="text-brand-crimson-red">Best</span>
-                    </h3>
+                    </h2>
                     <div className="flex items-center justify-center gap-3">
                         <span className="w-12 h-px bg-brand-muted-gray"></span>
                         <span className="text-sm font-semibold tracking-wider text-brand-crimson-red">
@@ -51,9 +51,9 @@ const CompetenciesSection = () => {
                             <div className="flex items-center justify-center w-16 h-16 mb-6 transition-colors rounded-xl bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red group-hover:text-brand-white">
                                 {item.icon}
                             </div>
-                            <h4 className="mb-3 text-xl font-bold transition-colors font-poppins text-brand-white group-hover:text-brand-crimson-red">
+                            <h3 className="mb-3 text-xl font-bold transition-colors font-poppins text-brand-white group-hover:text-brand-crimson-red">
                                 {item.title}
-                            </h4>
+                            </h3>
                             <p className="text-brand-light-gray font-inter">
                                 {item.description}
                             </p>

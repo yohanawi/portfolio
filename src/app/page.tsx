@@ -29,17 +29,19 @@ export const metadata: Metadata = {
     "Freelance Web Developer Sri Lanka",
   ],
   alternates: {
-    canonical: "https://www.yohanawishka.com",
+    canonical: "https://yohanawishka.com",
   },
   openGraph: {
     title: "Yohan Awishka | Full Stack Web Developer",
     description:
       "Personal portfolio of Yohan Awishka, showcasing projects, skills, experience, and education in modern web development.",
-    url: "https://www.yohanawishka.com",
+    url: "https://yohanawishka.com",
     siteName: "Yohan Awishka Portfolio",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/assets/images/portfolio home.png",
         width: 1200,
         height: 630,
         alt: "Yohan Awishka Portfolio",
@@ -61,6 +63,53 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://yohanawishka.com/#person",
+                name: "Yohan Awishka",
+                jobTitle: "Full Stack Web Developer",
+                description:
+                  "Full Stack Web Developer specializing in Next.js, React, Laravel, and modern web technologies.",
+                url: "https://yohanawishka.com",
+                image: "https://yohanawishka.com/assets/images/About.jpg",
+                email: "mailto:yohan.indrawansha2000@gmail.com",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Colombo",
+                  addressCountry: "LK",
+                },
+                sameAs: [
+                  "https://github.com/yohanawi",
+                  "https://www.linkedin.com/in/yohan-awishka-indrawansha",
+                ],
+                knowsAbout: [
+                  "Next.js",
+                  "React",
+                  "Laravel",
+                  "Node.js",
+                  "TypeScript",
+                  "Full Stack Development",
+                ],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://yohanawishka.com/#website",
+                name: "Yohan Awishka Portfolio",
+                url: "https://yohanawishka.com",
+                publisher: { "@id": "https://yohanawishka.com/#person" },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Hero / Introduction */}
       <section id="home">
         <HeroSection />

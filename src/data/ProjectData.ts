@@ -38,6 +38,7 @@ const projects: Project[] = [
   {
     title: "InteriorFilm - Premium Interior Design E-commerce",
     slug: "interiorfilm",
+    is_featured: true,
     description:
       "A high-performance, SEO-optimized e-commerce platform for interior design films and wraps, built with Next.js, React, TypeScript, and Tailwind CSS. Features guest checkout, advanced product catalog, and seamless integration with a Laravel backend.",
     techStack: [

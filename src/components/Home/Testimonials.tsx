@@ -30,7 +30,6 @@ const testimonials: Testimonial[] = [
         role: "Project Manager",
         company: "Acme Corp",
         rating: 5,
-        avatar: "/avatars/jane.jpg",
     },
     {
         quote: "Yohan's attention to detail and problem-solving skills made a huge difference in our project. He was able to tackle complex challenges with innovative solutions.",
@@ -38,7 +37,6 @@ const testimonials: Testimonial[] = [
         role: "Lead Developer",
         company: "Tech Solutions",
         rating: 5,
-        avatar: "/avatars/john.jpg",
     },
     {
         quote: "Exceptional developer with great communication skills. Yohan transformed our vision into reality and delivered a product that exceeded all our expectations.",
@@ -46,7 +44,6 @@ const testimonials: Testimonial[] = [
         role: "CEO",
         company: "StartUp Digital",
         rating: 5,
-        avatar: "/avatars/sarah.jpg",
     },
     {
         quote: "Professional, skilled, and a pleasure to work with. I highly recommend Yohan for any web development project. He brings creativity and technical expertise.",
@@ -54,7 +51,6 @@ const testimonials: Testimonial[] = [
         role: "Marketing Director",
         company: "Growth Agency",
         rating: 5,
-        avatar: "/avatars/michael.jpg",
     },
 ];
 
@@ -92,7 +88,7 @@ const TestimonialsSection: React.FC = () => {
                         <span className="section-subtitle">WHAT CLIENTS SAY</span>
                         <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
-                    <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
+                    <p className="max-w-4xl mx-auto mt-4 text-brand-light-gray">
                         Hear from some of the amazing clients I've worked with! From startups to established companies, I help businesses bring their digital visions to life with clean, scalable, and high-performance web applications. My focus is on delivering value, solving complex problems, and creating experiences that exceed expectations. These testimonials reflect the trust and satisfaction of those I’ve collaborated with over the years.
                     </p>
                 </header>

@@ -21,7 +21,6 @@ export async function generateMetadata(): Promise<Metadata> {
             "React Developer Contact",
             "Laravel Developer",
             "Web Development Services",
-            "Contact Yohan Awishka",
             "Full Stack Web Developer Sri Lanka",
             "Hire Web Developer Sri Lanka",
             "Next.js Developer Sri Lanka",
@@ -45,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
             siteName: "Yohan Awishka Portfolio",
             images: [
                 {
-                    url: "/images/og-contact.jpg",
+                    url: "/assets/images/portfolio home.png",
                     width: 1200,
                     height: 630,
                     alt: "Contact Yohan Awishka - Full Stack Developer",
@@ -59,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
             site: "@yohanawishka",
             title: "Contact Yohan Awishka | Full Stack Web Developer for Hire",
             description: "Contact Yohan Awishka, a Full Stack Web Developer specializing in Next.js, React, and Laravel. Available for freelance projects, remote work, and collaborations worldwide.",
-            images: ["/images/twitter-contact.jpg"],
+            images: ["/assets/images/portfolio home.png"],
             creator: "@yohanawishka",
         },
         robots: {
@@ -100,10 +99,10 @@ export default async function ContactPage() {
                             jobTitle: "Full Stack Developer",
                             url: "https://yohanawishka.com",
                             email: "mailto:yohan.indrawansha2000@gmail.com",
-                            telephone: "+94778638568",
+                            telephone: "+94785161481",
                             sameAs: [
-                                "https://github.com/yourusername",
-                                "https://linkedin.com/in/yourusername",
+                                "https://github.com/yohanawi",
+                                "https://www.linkedin.com/in/yohan-awishka-indrawansha",
                             ],
                             address: {
                                 "@type": "PostalAddress",

@@ -31,12 +31,12 @@ const Header: React.FC = () => {
         <header className={` fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${scrolled ? "bg-brand-gray" : "bg-transparent"}`} style={{ height: "72px" }}>
             <div className="flex items-center justify-between h-full px-4 mx-auto max-w-7xl sm:px-8">
                 {/* Logo */}
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center mt-16">
                     <Image
-                        src="/assets/logo/logo.png"
+                        src="/assets/images/logo.png"
                         alt="Logo"
-                        width={40}
-                        height={40}
+                        width={100}
+                        height={100}
                         className="rounded-full"
                         priority
                     />

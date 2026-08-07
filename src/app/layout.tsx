@@ -50,14 +50,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.yourname.com",
+    url: "https://yohanawishka.com",
     siteName: "Yohan Portfolio",
     title: "Yohan | Full Stack Web Developer",
     description:
       "Personal portfolio of Yohan, a Full Stack Web Developer building modern, fast, and scalable web applications.",
     images: [
       {
-        url: "/og-image.jpg", // put this in /public
+        url: "/assets/images/portfolio home.png",
         width: 1200,
         height: 630,
         alt: "Yohan Portfolio",
@@ -70,8 +70,8 @@ export const metadata: Metadata = {
     title: "Yohan | Full Stack Web Developer",
     description:
       "Explore Yohan’s portfolio – Full Stack Web Developer specializing in Next.js and Laravel.",
-    images: ["/og-image.jpg"],
-    creator: "@yourtwitter", // optional
+    images: ["/assets/images/portfolio home.png"],
+    creator: "@yohanawishka",
   },
 
   icons: {
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.yourname.com",
+    canonical: "https://yohanawishka.com",
   },
 };
 

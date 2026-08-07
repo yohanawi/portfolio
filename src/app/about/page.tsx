@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
             siteName: "Yohan Awishka Portfolio",
             images: [
                 {
-                    url: "/images/og-about.jpg",
+                    url: "/assets/images/portfolio home.png",
                     width: 1200,
                     height: 630,
                     alt: "Yohan Awishka - Full Stack Developer",
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
             card: "summary_large_image",
             title: "About Yohan Awishka | Full Stack Developer",
             description: "Experienced Full Stack Developer specializing in modern web technologies.",
-            images: ["/images/twitter-about.jpg"],
+            images: ["/assets/images/portfolio home.png"],
             creator: "@yohanawishka",
         },
         robots: {
@@ -86,8 +86,8 @@ export default async function AboutPage() {
                             "addressCountry": "Sri Lanka"
                         },
                         sameAs: [
-                            "https://github.com/yourusername",
-                            "https://linkedin.com/in/yourusername",
+                            "https://github.com/yohanawi",
+                            "https://www.linkedin.com/in/yohan-awishka-indrawansha",
                         ],
                         knowsAbout: [
                             "Next.js",

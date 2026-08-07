@@ -1,6 +1,6 @@
 "use client";
 
-import { Send, CheckCircle, User, AtSign, MessageSquare } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, User, AtSign, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -9,12 +9,14 @@ export default function ContactForm() {
         name: "",
         email: "",
         subject: "",
-        message: ""
+        message: "",
+        company: "", // honeypot - left empty by real users, hidden from view
     });
 
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const [submitError, setSubmitError] = useState("");
 
     const validateForm = () => {
         const newErrors: { [key: string]: string } = {};
@@ -38,18 +40,34 @@ export default function ContactForm() {
         if (!validateForm()) return;
 
         setLoading(true);
+        setSubmitError("");
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
 
-        setLoading(false);
-        setSubmitted(true);
+            if (!response.ok) {
+                const data = await response.json().catch(() => null);
+                throw new Error(data?.error || "Failed to send your message. Please try again later.");
+            }
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setForm({ name: "", email: "", subject: "", message: "" });
-            setSubmitted(false);
-        }, 3000);
+            setSubmitted(true);
+
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                setForm({ name: "", email: "", subject: "", message: "", company: "" });
+                setSubmitted(false);
+            }, 3000);
+        } catch (error) {
+            setSubmitError(
+                error instanceof Error ? error.message : "Failed to send your message. Please try again later.",
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -63,6 +81,20 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+            {/* Honeypot field - hidden from real users, catches basic bots */}
+            <div className="absolute w-px h-px overflow-hidden opacity-0 -z-10" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.company}
+                    onChange={handleChange}
+                />
+            </div>
+
             {/* Name Input */}
             <div className="relative">
                 <label htmlFor="name" className="block mb-2 text-sm font-semibold text-brand-light-gray">
@@ -153,6 +185,13 @@ export default function ContactForm() {
                     <p className="mt-1 text-xs text-red-500">{errors.message}</p>
                 )}
             </div>
+
+            {submitError && (
+                <p className="flex items-center gap-2 text-sm text-red-500" role="alert">
+                    <AlertCircle size={16} className="flex-shrink-0" />
+                    {submitError}
+                </p>
+            )}
 
             {/* Submit Button */}
             <button

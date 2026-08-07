@@ -87,7 +87,7 @@ const TimelineItem: React.FC<{
 
             {/* Content Card */}
             <div className={`md:w-1/2 ${isEven ? 'md:pr-12' : 'md:pl-12'}`}>
-                <Link href={`/experience/#${exp.id}`} >
+                <Link href={`/experience#${exp.id}`} >
                     <div className={`relative p-6 ml-16 transition-all duration-500 border md:ml-0 group rounded-2xl bg-brand-gray/80 border-brand-muted-gray/20 hover:border-brand-crimson-red/60 hover:shadow-xl hover:shadow-brand-crimson-red/10 hover:-translate-y-1 
                     ${isVisible ?
                             'scale-100' : isEven ? 'scale-95 translate-x-12' : 'scale-95 -translate-x-12'
@@ -172,7 +172,7 @@ const ExperienceSection: React.FC = () => (
                     <span className="section-subtitle">MY JOURNEY</span>
                     <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                 </div>
-                <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
+                <p className="max-w-4xl mx-auto mt-4 text-brand-light-gray">
                     A detailed timeline showcasing my journey as a Full Stack Developer, highlighting professional growth, key projects, freelance work, and achievements using modern web technologies like Next.js, Node.js, Laravel, Strapi, MySQL, GraphQL, and AWS.
                 </p>
             </header>

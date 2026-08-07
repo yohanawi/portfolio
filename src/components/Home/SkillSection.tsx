@@ -1,7 +1,7 @@
 "use client";
 
-import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaAws } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel, SiExpress, SiPostman, SiGraphql } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiMysql, SiPostgresql, SiVercel, SiPostman, SiGraphql, SiTypescript, SiJavascript, SiNestjs, SiRedis } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaGitAlt, FaAws, FaPhp, FaGithub, FaDocker } from "react-icons/fa";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 import React from "react";
 
@@ -10,33 +10,38 @@ const skills = [
         category: "Frontend",
         items: [
             { name: "Next.js", icon: <SiNextdotjs />, level: 90 },
-            { name: "React", icon: <FaReact />, level: 65 },
-            { name: "Tailwind", icon: <SiTailwindcss />, level: 90 },
-            { name: "HTML", icon: <FaHtml5 />, level: 95 },
-            { name: "CSS", icon: <FaCss3Alt />, level: 90 },
-        ],
+            { name: "TypeScript", icon: <SiTypescript />, level: 75 },
+            { name: "JavaScript", icon: <SiJavascript />, level: 90 },
+            { name: "Tailwind CSS", icon: <SiTailwindcss />, level: 90 },
+            { name: "HTML5", icon: <FaHtml5 />, level: 95 },
+            { name: "CSS3", icon: <FaCss3Alt />, level: 90 },
+        ]
     },
     {
         category: "Backend",
         items: [
             { name: "Laravel", icon: <FaLaravel />, level: 85 },
+            { name: "NestJS", icon: <SiNestjs />, level: 80 },
+            { name: "PHP", icon: <FaPhp />, level: 85 },
             { name: "Node.js", icon: <FaNodeJs />, level: 80 },
-            { name: "Express", icon: <SiExpress />, level: 60 },
-            { name: "REST APIs", icon: <SiPostman />, level: 80 },
-            { name: "GraphQL", icon: <SiGraphql />, level: 75 },
-        ],
+            { name: "REST APIs", icon: <SiPostman />, level: 90 },
+            { name: "GraphQL", icon: <SiGraphql />, level: 70 },
+        ]
     },
     {
         category: "Database",
         items: [
             { name: "MySQL", icon: <SiMysql />, level: 85 },
             { name: "PostgreSQL", icon: <SiPostgresql />, level: 60 },
+            { name: "Redis", icon: <SiRedis />, level: 60 },
         ],
     },
     {
         category: "DevOps / Tools",
         items: [
             { name: "Git", icon: <FaGitAlt />, level: 90 },
+            { name: "GitHub", icon: <FaGithub />, level: 90 },
+            { name: "Docker", icon: <FaDocker />, level: 75 },
             { name: "AWS", icon: <FaAws />, level: 70 },
             { name: "Vercel", icon: <SiVercel />, level: 85 },
         ],
@@ -49,7 +54,7 @@ const SkillSection: React.FC = () => (
         <div className="bg-blob-top-right" style={{ top: '2.5rem', left: '2.5rem' }} />
         <div className="bg-blob-bottom-left" style={{ bottom: '2.5rem', right: '2.5rem' }} />
 
-        <div className="relative z-10 max-w-6xl px-6 mx-auto">
+        <div className="relative z-10 max-w-7xl px-6 mx-auto">
             <header className="mb-16 text-center">
                 <h2 className="section-title">
                     Skills & <span className="text-brand-crimson-red">Tech Stack</span>
@@ -59,13 +64,13 @@ const SkillSection: React.FC = () => (
                     <span className="section-subtitle">WHAT I USE</span>
                     <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                 </div>
-                <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
-                    I combine cutting-edge frontend, backend, and DevOps technologies to deliver high-quality solutions. From responsive user interfaces using React, Next.js, and TailwindCSS, to robust backend systems with Node.js, Laravel, and databases like MySQL and PostgreSQL, I ensure every project is reliable, scalable, and optimized. With tools like Docker, Git, AWS, and Vercel, I streamline development and deployment processes for seamless delivery.
+                <p className="max-w-4xl mx-auto mt-4 text-brand-light-gray">
+                    Technology is more than just tools - it's how ideas become impactful digital experiences. I combine modern frontend frameworks, powerful backend solutions, and cloud technologies to create applications that are fast, intuitive, and built for growth. Every line of code is written with performance, scalability, and user experience in mind, ensuring products that look exceptional and perform even better.
                 </p>
             </header>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                 {skills.map((group, groupIndex) => (
                     <div key={group.category}
                         className="relative p-6 transition-all duration-300 border rounded-2xl bg-brand-gray/50 border-brand-muted-gray/20 hover:border-brand-crimson-red/40 hover:shadow-xl hover:shadow-brand-crimson-red/10 group"

@@ -4,16 +4,15 @@ import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "reac
 import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-import Image from "next/image";
-import React, { useRef } from "react";
 import { projects } from "@/data/ProjectData";
+import React, { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Link from "next/link";
-
 
 const ProjectSection: React.FC = () => {
     const swiperRef = useRef<SwiperType | null>(null);
@@ -34,7 +33,7 @@ const ProjectSection: React.FC = () => {
                         <span className="section-subtitle">MY WORK</span>
                         <span className="w-12 h-px bg-brand-muted-gray" aria-hidden="true" />
                     </div>
-                    <p className="max-w-2xl mx-auto mt-4 text-brand-light-gray">
+                    <p className="max-w-4xl mx-auto mt-4 text-brand-light-gray">
                         Discover a curated selection of my featured projects, each crafted to solve real-world problems and deliver exceptional user experiences. From web applications to AI-powered solutions, these projects highlight my expertise in modern technologies, clean architecture, and innovative design. Explore live demos, GitHub repositories, and the tech stacks that bring these solutions to life.
                     </p>
                 </header>

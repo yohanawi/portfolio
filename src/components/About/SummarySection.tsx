@@ -65,9 +65,9 @@ const SummarySection = () => {
                 <div className="relative z-10 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
                         <div>
-                            <h3 className="mb-3 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
+                            <h2 className="mb-3 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
                                 My Professional <span className="text-brand-crimson-red">Philosophy</span>
-                            </h3>
+                            </h2>
                             <div className="w-24 h-1 mb-8 rounded-full bg-gradient-to-r from-brand-crimson-red to-brand-soft-red"></div>
                             <div className="space-y-4">
                                 {highlights.map((item, index) => (
@@ -88,7 +88,7 @@ const SummarySection = () => {
                                     <div className="flex items-center justify-center border-4 rounded-full w-80 h-80 bg-brand-gray border-brand-crimson-red/30">
                                         <Image
                                             src="/assets/images/Notion.png"
-                                            alt="Profile"
+                                            alt="Yohan Awishka - Full Stack Developer"
                                             width={288}
                                             height={288}
                                             className="object-cover border-4 rounded-full shadow-lg w-72 h-72 border-brand-crimson-red"
@@ -113,9 +113,9 @@ const SummarySection = () => {
             <section className="relative px-6 py-16">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-16 text-center">
-                        <h3 className="mb-2 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
+                        <h2 className="mb-2 text-3xl font-bold md:text-4xl text-brand-white font-poppins">
                             Skills <span className="text-brand-crimson-red">Snapshot</span>
-                        </h3>
+                        </h2>
                         <div className="flex items-center justify-center gap-3">
                             <span className="w-12 h-px bg-brand-muted-gray"></span>
                             <span className="text-sm font-semibold tracking-wider text-brand-crimson-red">
@@ -133,9 +133,9 @@ const SummarySection = () => {
                                 <div className="flex items-center justify-center w-12 h-12 mb-4 transition-colors rounded-lg bg-brand-crimson-red/10 text-brand-crimson-red group-hover:bg-brand-crimson-red group-hover:text-brand-white">
                                     {skill.icon}
                                 </div>
-                                <h4 className="mb-4 text-xl font-bold transition-colors text-brand-white font-poppins group-hover:text-brand-crimson-red">
+                                <h3 className="mb-4 text-xl font-bold transition-colors text-brand-white font-poppins group-hover:text-brand-crimson-red">
                                     {skill.category}
-                                </h4>
+                                </h3>
                                 <ul className="space-y-2">
                                     {skill.items.map((item, i) => (
                                         <li key={i} className="flex items-start gap-2 text-sm text-brand-light-gray">
