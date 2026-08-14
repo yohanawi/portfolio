@@ -1,9 +1,11 @@
+type EmploymentType = "Full-time" | "Part-time" | "Internship" | "Freelance";
+
 type Experience = {
   title: string;
   id: string;
   company: string;
   duration: string;
-  type: string;
+  type: EmploymentType;
   description: string;
   responsibilities: string[];
   achievements?: string[];
@@ -11,6 +13,49 @@ type Experience = {
 };
 
 const experiences: Experience[] = [
+  {
+    title: "Software Enginner",
+    id: "encyte",
+    company: "Encyte",
+    duration: "2026 – Present",
+    type: "Full-time",
+    description:
+    "Working as a Software Engineer at Encyte, contributing to the development and maintenance of modern software solutions. Focused on building reliable, scalable, and maintainable applications while collaborating with the development team to deliver high-quality features and improve existing systems.",
+
+    responsibilities: [
+    "Develop and maintain scalable web applications and software solutions",
+    "Build and enhance frontend and backend application features",
+    "Design and integrate RESTful APIs and third-party services",
+    "Work with databases to manage and optimize application data",
+    "Write clean, reusable, and maintainable code following development best practices",
+    "Debug, troubleshoot, and resolve application issues",
+    "Optimize application performance, reliability, and user experience",
+    "Collaborate with team members on feature development, testing, and deployment",
+    "Participate in code reviews and contribute to improving code quality",
+    "Maintain and improve existing production applications",
+  ],
+
+    achievements: ["Contributed to the development and improvement of production software applications",
+    "Successfully delivered new features based on business and technical requirements",
+    "Improved application stability and maintainability through code enhancements",
+    "Strengthened software engineering practices through team collaboration and code reviews",
+    "Gained hands-on experience working within a professional software engineering environment",
+  ],
+
+    technologies: [
+      "Next.js",
+      "NestJs",
+      "Node.js",
+      "Laravel",
+      "TypeScript",
+      "JavaScript",
+      "REST APIs",
+      "Postergql",
+      "Git",
+      "Docker",
+    ],
+  },
+  
   {
     title: "Full Stack Web Developer",
     id: "xess-global",
